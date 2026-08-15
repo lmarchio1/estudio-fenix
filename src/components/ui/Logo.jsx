@@ -1,0 +1,29 @@
+import PhoenixIcon from './PhoenixIcon'
+
+export default function Logo({
+  variant = 'light',
+  iconClassName = 'h-9 w-9',
+  nameClassName = 'text-lg',
+  taglineClassName = 'text-[9px]',
+  gap = 'gap-2.5',
+  stacked = false,
+}) {
+  const isLight = variant === 'light'
+  const nameColor = isLight ? 'text-white' : 'text-fenixNavy-900'
+  const taglineColor = isLight ? 'text-ember-300' : 'text-ember-600'
+  const iconColor = isLight ? 'text-white' : 'text-fenixNavy-900'
+
+  return (
+    <div className={`flex ${stacked ? 'flex-col items-center text-center' : 'items-center'} ${gap}`}>
+      <PhoenixIcon className={`${iconClassName} ${iconColor}`} />
+      <div className="leading-none">
+        <p className={`font-serif font-bold tracking-wide ${nameClassName} ${nameColor}`}>
+          FÉNIX
+        </p>
+        <p className={`mt-1 font-semibold uppercase tracking-[0.16em] ${taglineColor} ${taglineClassName}`}>
+          Estudio Fénix y Asociados
+        </p>
+      </div>
+    </div>
+  )
+}
