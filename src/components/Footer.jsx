@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8">
-          <p className="text-xs text-slate-500">© {YEAR} Estudio Fénix y Asociados. Todos los derechos reservados.</p>
+          <p className="text-xs text-slate-500">© {YEAR} Estudio Fénix — Ramírez & Marchioni. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

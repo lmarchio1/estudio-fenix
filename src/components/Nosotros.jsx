@@ -3,16 +3,16 @@ import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 
 const SOCIOS = [
   {
-    initials: 'XX',
-    nombre: 'Nombre Apellido',
+    initials: 'R',
+    nombre: 'Ramírez',
     rol: 'Contador Público · Socio',
-    bio: 'Especializado en asesoramiento impositivo y monotributo. Reemplazar con la bio real.',
+    bio: 'Especializado en asesoramiento impositivo y monotributo. Falta completar nombre y bio real.',
   },
   {
-    initials: 'YY',
-    nombre: 'Nombre Apellido',
+    initials: 'M',
+    nombre: 'Marchioni',
     rol: 'Contador Público · Socio',
-    bio: 'Especializado en gestión laboral y societaria. Reemplazar con la bio real.',
+    bio: 'Especializado en gestión laboral y societaria. Falta completar nombre y bio real.',
   },
 ]
 

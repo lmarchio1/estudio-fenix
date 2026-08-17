@@ -18,10 +18,10 @@ export default function Logo({
       <PhoenixIcon className={`${iconClassName} ${iconColor}`} />
       <div className="leading-none">
         <p className={`font-serif font-bold tracking-wide ${nameClassName} ${nameColor}`}>
-          FÉNIX
+          ESTUDIO FÉNIX
         </p>
         <p className={`mt-1 font-semibold uppercase tracking-[0.16em] ${taglineColor} ${taglineClassName}`}>
-          Estudio Fénix y Asociados
+          Ramírez &amp; Marchioni
         </p>
       </div>
     </div>

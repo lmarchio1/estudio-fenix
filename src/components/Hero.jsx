@@ -32,7 +32,7 @@ export default function Hero() {
             className="mt-6 animate-fade-up text-lg leading-relaxed text-slate-200 motion-reduce:animate-none"
             style={{ animationDelay: '240ms' }}
           >
-            Estudio Fénix y Asociados acompaña a monotributistas, profesionales
+            Estudio Fénix — Ramírez & Marchioni acompaña a monotributistas, profesionales
             independientes y PyMEs con asesoramiento impositivo, certificaciones
             contables y gestión laboral clara y a tiempo.
           </p>
