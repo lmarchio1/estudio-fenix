@@ -11,31 +11,32 @@ export default function Hero() {
         }}
       />
 
-      {/* fénix decorativo dorado, centrado arriba, con resplandor de brasa */}
-      <div className="pointer-events-none absolute left-1/2 top-20 hidden h-64 w-64 -translate-x-1/2 select-none sm:top-16 sm:block sm:h-80 sm:w-80 lg:top-12 lg:h-[26rem] lg:w-[26rem]">
-        <div
-          className="absolute inset-0 animate-glow"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(234,182,84,0.35) 0%, rgba(234,182,84,0.12) 45%, rgba(234,182,84,0) 72%)',
-          }}
-        />
-        <div
-          className="absolute inset-0 animate-float"
-          style={{
-            WebkitMaskImage: `url(${phoenixIcon})`,
-            maskImage: `url(${phoenixIcon})`,
-            WebkitMaskSize: 'contain',
-            maskSize: 'contain',
-            WebkitMaskRepeat: 'no-repeat',
-            maskRepeat: 'no-repeat',
-            WebkitMaskPosition: 'center',
-            maskPosition: 'center',
-            background: 'linear-gradient(160deg, #fdf6ea 0%, #f3d48c 30%, #eab654 55%, #c17d1f 100%)',
-            opacity: 0.9,
-            filter: 'drop-shadow(0 0 26px rgba(234,182,84,0.45))',
-          }}
-        />
+      {/* fénix decorativo plateado con brillo y borde dorado, a la derecha, centrado verticalmente */}
+      <div className="pointer-events-none absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 select-none sm:-right-6 sm:block lg:-right-2 lg:h-[26rem] lg:w-[26rem]">
+        <div className="absolute inset-0 animate-float">
+          <div
+            className="absolute inset-0 animate-glow"
+            style={{
+              background:
+                'radial-gradient(circle, rgba(255,255,255,0.28) 0%, rgba(234,182,84,0.12) 45%, rgba(234,182,84,0) 72%)',
+            }}
+          />
+          <div
+            className="absolute inset-0 animate-shimmer"
+            style={{
+              WebkitMaskImage: `url(${phoenixIcon})`,
+              maskImage: `url(${phoenixIcon})`,
+              WebkitMaskSize: 'contain',
+              maskSize: 'contain',
+              WebkitMaskRepeat: 'no-repeat',
+              maskRepeat: 'no-repeat',
+              WebkitMaskPosition: 'center',
+              maskPosition: 'center',
+              background: 'linear-gradient(155deg, #ffffff 0%, #f4f7fa 25%, #d6e2ec 55%, #eab654 100%)',
+              opacity: 0.55,
+            }}
+          />
+        </div>
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">

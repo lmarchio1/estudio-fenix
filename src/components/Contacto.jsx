@@ -1,4 +1,5 @@
 import SectionHeading from './ui/SectionHeading'
+import confianzaManos from '../assets/confianza-manos.jpg'
 
 // TODO: reemplazar por los datos reales de contacto del estudio.
 const WHATSAPP_NUMBER = '5491100000000'
@@ -9,6 +10,18 @@ const DIRECCION = 'Dirección a confirmar, Buenos Aires'
 export default function Contacto() {
   return (
     <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28">
+      <img
+        src={confianzaManos}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-50"
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(6,18,28,0.55) 0%, rgba(6,18,28,0.88) 45%, rgba(6,18,28,0.98) 100%)',
+        }}
+      />
       <div
         className="absolute inset-0"
         style={{
