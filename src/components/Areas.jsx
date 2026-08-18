@@ -1,5 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
+import cafeCompu from '../assets/cafe-compu.jpg'
 
 const AREAS = [
   'Monotributistas',
@@ -24,6 +25,21 @@ export default function Areas() {
           title="Áreas en las que trabajamos"
           description="Adaptamos el asesoramiento a la realidad de cada actividad."
         />
+
+        <div className="relative mb-12 overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10">
+          <img
+            src={cafeCompu}
+            alt="Estudio Fénix — trabajo cercano y flexible"
+            className="h-56 w-full object-cover sm:h-72"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(6,18,28,0.05) 0%, rgba(6,18,28,0.15) 60%, rgba(6,18,28,0.55) 100%)',
+            }}
+          />
+        </div>
 
         <div ref={ref} className="mx-auto flex max-w-4xl flex-wrap justify-center gap-3">
           {AREAS.map((area, i) => (
