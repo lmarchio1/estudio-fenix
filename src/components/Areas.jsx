@@ -19,7 +19,7 @@ export default function Areas() {
   return (
     <section id="areas" className="scroll-mt-24 bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:items-center">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:items-stretch">
           <div className="lg:col-span-3">
             <SectionHeading
               eyebrow="A quién ayudamos"
@@ -42,11 +42,11 @@ export default function Areas() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10">
+            <div className="relative h-64 overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10 lg:h-full">
               <img
                 src={libroLapiz}
                 alt="Estudio Fénix — asesoramiento con criterio y experiencia"
-                className="aspect-square w-full object-cover"
+                className="h-full w-full object-cover"
               />
               <div
                 className="absolute inset-0"
