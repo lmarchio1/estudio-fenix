@@ -10,18 +10,16 @@ const DIRECCION = 'Dirección a confirmar, Buenos Aires'
 export default function Contacto() {
   return (
     <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28 lg:py-[79px]">
-      <img
-        src={confianzaManos}
-        alt=""
-        className="absolute inset-x-0 top-0 h-80 w-full object-cover sm:inset-0 sm:h-full"
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(6,18,28,0.2) 0%, rgba(6,18,28,0.4) 45%, rgba(6,18,28,0.75) 100%)',
-        }}
-      />
+      <div className="absolute inset-x-0 top-0 h-80 w-full sm:inset-0 sm:h-full">
+        <img src={confianzaManos} alt="" className="h-full w-full object-cover" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(6,18,28,0.2) 0%, rgba(6,18,28,0.45) 55%, rgba(6,18,28,1) 100%)',
+          }}
+        />
+      </div>
       <div
         className="absolute inset-0"
         style={{
