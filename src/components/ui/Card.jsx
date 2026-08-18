@@ -11,7 +11,7 @@ export default function Card({ icon, title, description, delay = 0 }) {
       }`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-fenixNavy-900 text-ember-300 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pop">
+      <div className="icon-gold inline-flex h-11 w-11 items-center justify-center rounded-xl bg-fenixNavy-900 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pop">
         {icon}
       </div>
       <h3 className="mt-4 font-serif text-base font-bold text-fenixNavy-900">{title}</h3>

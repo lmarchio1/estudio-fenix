@@ -19,7 +19,7 @@ export default function Areas() {
   return (
     <section id="areas" className="relative scroll-mt-24 overflow-hidden bg-white py-20 sm:py-28">
       {/* foto a pantalla completa del lado derecho, solo desktop */}
-      <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
+      <div className="absolute inset-y-0 right-0 hidden w-[42%] lg:block">
         <img
           src={libroLapiz}
           alt="Estudio Fénix — asesoramiento con criterio y experiencia"
@@ -29,6 +29,12 @@ export default function Areas() {
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(180deg, rgba(6,18,28,0) 60%, rgba(6,18,28,0.35) 100%)',
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 18%)',
           }}
         />
       </div>

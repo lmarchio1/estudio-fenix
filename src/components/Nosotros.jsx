@@ -53,7 +53,7 @@ export default function Nosotros() {
       />
 
       {/* foto a pantalla completa del lado izquierdo, solo desktop */}
-      <div className="absolute inset-y-0 left-0 hidden w-1/2 lg:block">
+      <div className="absolute inset-y-0 left-0 hidden w-[42%] lg:block">
         <img
           src={compuCafe}
           alt="Estudio Fénix — espacio de trabajo"
@@ -63,6 +63,12 @@ export default function Nosotros() {
           className="absolute inset-0"
           style={{
             background: 'linear-gradient(180deg, rgba(6,18,28,0) 55%, rgba(6,18,28,0.65) 100%)',
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(90deg, rgba(11,28,43,0) 82%, rgba(11,28,43,0.95) 100%)',
           }}
         />
       </div>
@@ -83,7 +89,7 @@ export default function Nosotros() {
           />
         </div>
 
-        <div className="lg:ml-auto lg:max-w-lg">
+        <div className="lg:ml-auto lg:max-w-2xl">
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"

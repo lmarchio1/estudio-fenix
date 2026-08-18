@@ -31,4 +31,13 @@ body {
     background-clip: text;
     color: transparent;
   }
+
+  /* Mismo dorado pero en color plano (no se puede usar el degradé de texto
+     en íconos SVG con currentColor), para que combinen con .text-gold */
+  .icon-gold {
+    color: #d9a52a;
+  }
+  .icon-gold-dark {
+    color: #a67c1a;
+  }
 }
