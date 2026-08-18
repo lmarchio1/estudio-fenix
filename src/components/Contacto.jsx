@@ -13,13 +13,13 @@ export default function Contacto() {
       <img
         src={confianzaManos}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-50"
+        className="absolute inset-0 h-full w-full object-cover"
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(6,18,28,0.55) 0%, rgba(6,18,28,0.88) 45%, rgba(6,18,28,0.98) 100%)',
+            'linear-gradient(180deg, rgba(6,18,28,0.2) 0%, rgba(6,18,28,0.4) 45%, rgba(6,18,28,0.75) 100%)',
         }}
       />
       <div
