@@ -6,7 +6,7 @@ export default function Card({ icon, title, description, delay = 0 }) {
   return (
     <div
       ref={ref}
-      className={`group rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember-200 hover:bg-white hover:shadow-xl hover:shadow-ember-900/10 ${
+      className={`group rounded-2xl border border-slate-300/70 bg-slate-100 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember-200 hover:bg-white hover:shadow-xl hover:shadow-ember-900/10 ${
         visible ? 'animate-fade-up' : 'opacity-0'
       }`}
       style={{ animationDelay: `${delay}ms` }}
