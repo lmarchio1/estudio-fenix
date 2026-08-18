@@ -15,13 +15,20 @@ body {
 }
 
 @layer utilities {
-  /* Dorado brillante, color único: para usar sobre fondos oscuros (navy) */
+  /* Dorado metálico uniforme: mismo degradé (claro arriba, oscuro abajo) en
+     toda la página, para usar sobre fondos oscuros (navy) */
   .text-gold {
-    color: #f2c14e;
+    background-image: linear-gradient(180deg, #f6dfa0 0%, #d9a52a 50%, #b9861a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  /* Dorado más profundo, mismo criterio pero con contraste sobre fondos claros (blanco) */
+  /* Misma fórmula, más oscura para mantener contraste sobre fondos claros (blanco) */
   .text-gold-dark {
-    color: #b8860b;
+    background-image: linear-gradient(180deg, #c99a2e 0%, #a67c1a 50%, #8a6512 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }

@@ -51,37 +51,50 @@ export default function Nosotros() {
             'radial-gradient(circle at 12% 88%, rgba(221,154,51,0.12) 0%, rgba(11,28,43,0) 45%)',
         }}
       />
+
+      {/* foto a pantalla completa del lado izquierdo, solo desktop */}
+      <div className="absolute inset-y-0 left-0 hidden w-1/2 lg:block">
+        <img
+          src={compuCafe}
+          alt="Estudio Fénix — espacio de trabajo"
+          className="h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, rgba(6,18,28,0) 55%, rgba(6,18,28,0.65) 100%)',
+          }}
+        />
+      </div>
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:items-stretch">
-          <div className="lg:col-span-2">
-            <div className="relative mx-auto aspect-square max-w-sm overflow-hidden rounded-2xl ring-1 ring-inset ring-white/10 lg:mx-0 lg:aspect-auto lg:h-full lg:w-full lg:max-w-none">
-              <img
-                src={compuCafe}
-                alt="Estudio Fénix — espacio de trabajo"
-                className="h-full w-full object-cover"
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(180deg, rgba(6,18,28,0) 55%, rgba(6,18,28,0.65) 100%)',
-                }}
-              />
-            </div>
-          </div>
+        {/* foto en cuadrado, solo mobile/tablet */}
+        <div className="relative mx-auto mb-12 aspect-square max-w-sm overflow-hidden rounded-2xl ring-1 ring-inset ring-white/10 lg:hidden">
+          <img
+            src={compuCafe}
+            alt="Estudio Fénix — espacio de trabajo"
+            className="h-full w-full object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(180deg, rgba(6,18,28,0) 55%, rgba(6,18,28,0.65) 100%)',
+            }}
+          />
+        </div>
 
-          <div className="lg:col-span-3">
-            <SectionHeading
-              variant="dark"
-              eyebrow="Quiénes somos"
-              title="Un estudio que renace junto a cada cliente"
-              description="Como el ave que le da nombre al estudio, creemos en volver a empezar: ordenar los números, ponerse al día con el fisco y crecer con reglas claras. Dos socios, un mismo compromiso con cada cliente."
-            />
+        <div className="lg:ml-auto lg:max-w-lg">
+          <SectionHeading
+            variant="dark"
+            eyebrow="Quiénes somos"
+            title="Un estudio que renace junto a cada cliente"
+            description="Como el ave que le da nombre al estudio, creemos en volver a empezar: ordenar los números, ponerse al día con el fisco y crecer con reglas claras. Dos socios, un mismo compromiso con cada cliente."
+          />
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {SOCIOS.map((socio, i) => (
-                <SocioCard key={socio.nombre + i} socio={socio} delay={i * 120} />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {SOCIOS.map((socio, i) => (
+              <SocioCard key={socio.nombre + i} socio={socio} delay={i * 120} />
+            ))}
           </div>
         </div>
       </div>
