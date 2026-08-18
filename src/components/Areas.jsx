@@ -17,7 +17,7 @@ export default function Areas() {
   const [ref, visible] = useRevealOnScroll(0.2)
 
   return (
-    <section id="areas" className="relative scroll-mt-24 overflow-hidden bg-white py-20 sm:py-28 lg:py-[177px]">
+    <section id="areas" className="relative scroll-mt-24 overflow-hidden bg-white py-20 sm:py-28 lg:py-[127px]">
       {/* foto a pantalla completa del lado derecho, solo desktop */}
       <div
         className="absolute inset-y-0 right-0 hidden w-[42%] lg:block"

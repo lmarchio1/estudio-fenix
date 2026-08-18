@@ -9,7 +9,7 @@ const DIRECCION = 'Dirección a confirmar, Buenos Aires'
 
 export default function Contacto() {
   return (
-    <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28 lg:py-[129px]">
+    <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28 lg:py-[79px]">
       <img
         src={confianzaManos}
         alt=""
