@@ -11,8 +11,14 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-fenixNavy-950 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-fenixNavy-950 text-slate-300">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at 8% 0%, rgba(221,154,51,0.1) 0%, rgba(6,18,28,0) 45%)',
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-3">
           <div className="sm:col-span-2">
             <Logo
