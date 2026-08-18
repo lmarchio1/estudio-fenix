@@ -1,5 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
+import estudioOficina from '../assets/estudio-oficina.jpg'
 
 const SOCIOS = [
   {
@@ -51,17 +52,37 @@ export default function Nosotros() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          variant="dark"
-          eyebrow="Quiénes somos"
-          title="Un estudio que renace junto a cada cliente"
-          description="Como el ave que le da nombre al estudio, creemos en volver a empezar: ordenar los números, ponerse al día con el fisco y crecer con reglas claras. Dos socios, un mismo compromiso con cada cliente."
-        />
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:items-center">
+          <div className="lg:col-span-2">
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-inset ring-white/10">
+              <img
+                src={estudioOficina}
+                alt="Estudio Fénix — espacio de trabajo"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(180deg, rgba(6,18,28,0) 55%, rgba(6,18,28,0.65) 100%)',
+                }}
+              />
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {SOCIOS.map((socio, i) => (
-            <SocioCard key={socio.nombre + i} socio={socio} delay={i * 120} />
-          ))}
+          <div className="lg:col-span-3">
+            <SectionHeading
+              variant="dark"
+              eyebrow="Quiénes somos"
+              title="Un estudio que renace junto a cada cliente"
+              description="Como el ave que le da nombre al estudio, creemos en volver a empezar: ordenar los números, ponerse al día con el fisco y crecer con reglas claras. Dos socios, un mismo compromiso con cada cliente."
+            />
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {SOCIOS.map((socio, i) => (
+                <SocioCard key={socio.nombre + i} socio={socio} delay={i * 120} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

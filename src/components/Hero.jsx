@@ -14,7 +14,7 @@ export default function Hero() {
       {/* fénix decorativo, resplandor de brasa */}
       <div className="pointer-events-none absolute -right-16 top-10 hidden select-none sm:block lg:-right-6">
         <div className="absolute inset-0 animate-glow rounded-full bg-ember-400/20 blur-3xl" />
-        <PhoenixIcon className="relative h-72 w-72 animate-float text-white/10 lg:h-96 lg:w-96" />
+        <PhoenixIcon className="relative h-72 w-72 animate-float opacity-[0.08] lg:h-96 lg:w-96" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">

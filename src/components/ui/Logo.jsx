@@ -11,11 +11,10 @@ export default function Logo({
   const isLight = variant === 'light'
   const nameColor = isLight ? 'text-white' : 'text-fenixNavy-900'
   const taglineColor = isLight ? 'text-ember-300' : 'text-ember-600'
-  const iconColor = isLight ? 'text-white' : 'text-fenixNavy-900'
 
   return (
     <div className={`flex ${stacked ? 'flex-col items-center text-center' : 'items-center'} ${gap}`}>
-      <PhoenixIcon className={`${iconClassName} ${iconColor}`} />
+      <PhoenixIcon className={iconClassName} />
       <div className="leading-none">
         <p className={`font-serif font-bold tracking-wide ${nameClassName} ${nameColor}`}>
           ESTUDIO FÉNIX
