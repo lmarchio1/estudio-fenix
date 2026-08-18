@@ -1,4 +1,4 @@
-import PhoenixIcon from './ui/PhoenixIcon'
+import phoenixIcon from '../assets/phoenix-icon.png'
 
 export default function Hero() {
   return (
@@ -11,10 +11,31 @@ export default function Hero() {
         }}
       />
 
-      {/* fénix decorativo, resplandor de brasa */}
-      <div className="pointer-events-none absolute -right-16 top-10 hidden select-none sm:block lg:-right-6">
-        <div className="absolute inset-0 animate-glow rounded-full bg-ember-400/20 blur-3xl" />
-        <PhoenixIcon className="relative h-72 w-72 animate-float opacity-[0.08] lg:h-96 lg:w-96" />
+      {/* fénix decorativo dorado, centrado arriba, con resplandor de brasa */}
+      <div className="pointer-events-none absolute left-1/2 top-20 hidden h-64 w-64 -translate-x-1/2 select-none sm:top-16 sm:block sm:h-80 sm:w-80 lg:top-12 lg:h-[26rem] lg:w-[26rem]">
+        <div
+          className="absolute inset-0 animate-glow"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(234,182,84,0.35) 0%, rgba(234,182,84,0.12) 45%, rgba(234,182,84,0) 72%)',
+          }}
+        />
+        <div
+          className="absolute inset-0 animate-float"
+          style={{
+            WebkitMaskImage: `url(${phoenixIcon})`,
+            maskImage: `url(${phoenixIcon})`,
+            WebkitMaskSize: 'contain',
+            maskSize: 'contain',
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
+            WebkitMaskPosition: 'center',
+            maskPosition: 'center',
+            background: 'linear-gradient(160deg, #fdf6ea 0%, #f3d48c 30%, #eab654 55%, #c17d1f 100%)',
+            opacity: 0.9,
+            filter: 'drop-shadow(0 0 26px rgba(234,182,84,0.45))',
+          }}
+        />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
