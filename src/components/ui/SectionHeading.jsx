@@ -7,7 +7,7 @@ export default function SectionHeading({ eyebrow, title, description, align = 'l
       {eyebrow && (
         <span
           className={`text-sm font-semibold uppercase tracking-wider ${
-            isDark ? 'text-ember-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]' : 'text-ember-600'
+            isDark ? 'text-gold drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]' : 'text-gold-dark'
           }`}
         >
           {eyebrow}

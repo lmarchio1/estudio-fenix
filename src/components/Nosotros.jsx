@@ -28,12 +28,12 @@ function SocioCard({ socio, delay }) {
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ember-400/15 font-serif text-lg font-bold text-ember-300 ring-1 ring-inset ring-ember-300/30 transition-transform duration-300 group-hover:scale-110">
-          {socio.initials}
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ember-400/15 ring-1 ring-inset ring-ember-300/30 transition-transform duration-300 group-hover:scale-110">
+          <span className="text-gold font-serif text-lg font-bold">{socio.initials}</span>
         </div>
         <div>
           <p className="font-serif text-lg font-bold text-white">{socio.nombre}</p>
-          <p className="text-sm text-ember-300">{socio.rol}</p>
+          <p className="text-gold text-sm">{socio.rol}</p>
         </div>
       </div>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">{socio.bio}</p>
