@@ -1,6 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import dolarOro from '../assets/dolar-oro.png'
+import computadoras from '../assets/computadoras.avif'
 
 const AREAS = [
   'Monotributistas',
@@ -45,8 +45,8 @@ export default function Areas() {
           <div className="lg:col-span-2">
             <div className="relative overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10">
               <img
-                src={dolarOro}
-                alt="Estudio Fénix — asesoramiento financiero"
+                src={computadoras}
+                alt="Estudio Fénix — espacio de trabajo digital"
                 className="aspect-square w-full object-cover"
               />
               <div
