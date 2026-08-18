@@ -76,7 +76,7 @@ const SERVICES = [
 
 export default function Servicios() {
   return (
-    <section id="servicios" className="scroll-mt-24 bg-white py-20 sm:py-28">
+    <section id="servicios" className="scroll-mt-24 bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Qué hacemos"
@@ -84,7 +84,7 @@ export default function Servicios() {
           description="Con foco en monotributistas, profesionales independientes y PyMEs que necesitan un estudio cercano y al día con la normativa."
         />
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, i) => (
             <Card
               key={service.title}
