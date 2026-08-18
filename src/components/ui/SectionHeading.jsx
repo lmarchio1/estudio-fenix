@@ -20,6 +20,13 @@ export default function SectionHeading({ eyebrow, title, description, align = 'l
       >
         {title}
       </h2>
+
+      <div className={`mt-4 flex items-center gap-3 ${align === 'center' ? 'justify-center' : ''}`}>
+        <span className={`h-px w-10 ${isDark ? 'bg-ember-300/40' : 'bg-ember-400/50'}`} />
+        <span className="h-1.5 w-1.5 rotate-45 bg-ember-400" />
+        <span className={`h-px w-10 ${isDark ? 'bg-ember-300/40' : 'bg-ember-400/50'}`} />
+      </div>
+
       {description && (
         <p
           className={`mt-3 text-base ${

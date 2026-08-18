@@ -4,16 +4,16 @@ import estudioOficina from '../assets/estudio-oficina.jpg'
 
 const SOCIOS = [
   {
-    initials: 'R',
-    nombre: 'Ramírez',
+    initials: 'N',
+    nombre: 'Nacho Ramírez',
     rol: 'Contador Público · Socio',
-    bio: 'Especializado en asesoramiento impositivo y monotributo. Falta completar nombre y bio real.',
+    bio: 'Especializado en asesoramiento impositivo y monotributo. Falta completar la bio real.',
   },
   {
-    initials: 'M',
-    nombre: 'Marchioni',
+    initials: 'L',
+    nombre: 'Leandro Marchioni',
     rol: 'Contador Público · Socio',
-    bio: 'Especializado en gestión laboral y societaria. Falta completar nombre y bio real.',
+    bio: 'Especializado en gestión laboral y societaria. Falta completar la bio real.',
   },
 ]
 
@@ -22,13 +22,13 @@ function SocioCard({ socio, delay }) {
   return (
     <div
       ref={ref}
-      className={`rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur transition-all duration-300 hover:bg-white/10 ${
+      className={`group rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:ring-ember-300/30 hover:shadow-lg hover:shadow-ember-900/10 ${
         visible ? 'animate-fade-up' : 'opacity-0'
       }`}
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ember-400/15 font-serif text-lg font-bold text-ember-300 ring-1 ring-inset ring-ember-300/30">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ember-400/15 font-serif text-lg font-bold text-ember-300 ring-1 ring-inset ring-ember-300/30 transition-transform duration-300 group-hover:scale-110">
           {socio.initials}
         </div>
         <div>
@@ -43,7 +43,7 @@ function SocioCard({ socio, delay }) {
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="relative overflow-hidden bg-fenixNavy-900 py-20 sm:py-28">
+    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-900 py-20 sm:py-28">
       <div
         className="absolute inset-0"
         style={{

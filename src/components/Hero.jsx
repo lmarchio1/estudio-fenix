@@ -42,13 +42,13 @@ export default function Hero() {
           >
             <a
               href="#contacto"
-              className="rounded-full bg-ember-400 px-5 py-3 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-colors hover:bg-ember-300"
+              className="rounded-full bg-ember-400 px-5 py-3 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:bg-ember-300 hover:shadow-md hover:shadow-ember-900/40"
             >
               Consultanos ahora
             </a>
             <a
               href="#servicios"
-              className="rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 backdrop-blur transition-colors hover:bg-white/20"
+              className="rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:bg-white/20"
             >
               Ver servicios
             </a>

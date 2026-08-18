@@ -16,7 +16,7 @@ export default function Areas() {
   const [ref, visible] = useRevealOnScroll(0.2)
 
   return (
-    <section id="areas" className="bg-white py-20 sm:py-28">
+    <section id="areas" className="scroll-mt-24 bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           align="center"

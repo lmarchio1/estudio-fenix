@@ -6,7 +6,7 @@ export default function Card({ icon, title, description, delay = 0 }) {
   return (
     <div
       ref={ref}
-      className={`group rounded-2xl border border-fenixNavy-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-ember-200 hover:shadow-lg ${
+      className={`group rounded-2xl border border-fenixNavy-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-ember-200 hover:shadow-xl hover:shadow-ember-900/10 ${
         visible ? 'animate-fade-up' : 'opacity-0'
       }`}
       style={{ animationDelay: `${delay}ms` }}
@@ -15,7 +15,8 @@ export default function Card({ icon, title, description, delay = 0 }) {
         {icon}
       </div>
       <h3 className="mt-5 font-serif text-lg font-bold text-fenixNavy-900">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
+      <span className="mt-1.5 block h-0.5 w-6 rounded-full bg-ember-400 transition-all duration-300 group-hover:w-12" />
+      <p className="mt-3 text-sm leading-relaxed text-slate-600">{description}</p>
     </div>
   )
 }
