@@ -42,7 +42,7 @@ export default function Areas() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="relative h-64 overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10 lg:h-full">
+            <div className="relative mx-auto aspect-square max-w-sm overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10 lg:mx-0 lg:aspect-auto lg:h-full lg:w-full lg:max-w-none">
               <img
                 src={libroLapiz}
                 alt="Estudio Fénix — asesoramiento con criterio y experiencia"
