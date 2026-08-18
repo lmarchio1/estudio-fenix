@@ -1,6 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import estudioOficina from '../assets/estudio-oficina.jpg'
+import compuCafe from '../assets/compu-cafe.avif'
 
 const SOCIOS = [
   {
@@ -56,9 +56,9 @@ export default function Nosotros() {
           <div className="lg:col-span-2">
             <div className="relative overflow-hidden rounded-2xl ring-1 ring-inset ring-white/10">
               <img
-                src={estudioOficina}
+                src={compuCafe}
                 alt="Estudio Fénix — espacio de trabajo"
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-square w-full object-cover"
               />
               <div
                 className="absolute inset-0"

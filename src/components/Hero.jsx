@@ -1,4 +1,3 @@
-import phoenixIcon from '../assets/phoenix-icon.png'
 import estudioOficina from '../assets/estudio-oficina.jpg'
 
 export default function Hero() {
@@ -24,33 +23,6 @@ export default function Hero() {
         }}
       />
 
-      {/* fénix decorativo plateado con brillo y borde dorado, a la derecha, centrado verticalmente */}
-      <div className="pointer-events-none absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 select-none sm:-right-6 sm:block lg:-right-2 lg:h-[26rem] lg:w-[26rem]">
-        <div className="absolute inset-0 animate-float">
-          <div
-            className="absolute inset-0 animate-glow"
-            style={{
-              background:
-                'radial-gradient(circle, rgba(255,255,255,0.28) 0%, rgba(234,182,84,0.12) 45%, rgba(234,182,84,0) 72%)',
-            }}
-          />
-          <div
-            className="absolute inset-0 animate-shimmer"
-            style={{
-              WebkitMaskImage: `url(${phoenixIcon})`,
-              maskImage: `url(${phoenixIcon})`,
-              WebkitMaskSize: 'contain',
-              maskSize: 'contain',
-              WebkitMaskRepeat: 'no-repeat',
-              maskRepeat: 'no-repeat',
-              WebkitMaskPosition: 'center',
-              maskPosition: 'center',
-              background: 'linear-gradient(155deg, #ffffff 0%, #f4f7fa 25%, #d6e2ec 55%, #eab654 100%)',
-              opacity: 0.55,
-            }}
-          />
-        </div>
-      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="max-w-2xl">
