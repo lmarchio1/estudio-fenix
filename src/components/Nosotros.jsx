@@ -43,7 +43,7 @@ function SocioCard({ socio, delay }) {
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-900 py-20 sm:py-28">
+    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-900 py-20 sm:py-28 lg:py-[117px]">
       <div
         className="absolute inset-0"
         style={{
