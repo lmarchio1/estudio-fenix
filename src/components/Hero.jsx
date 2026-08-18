@@ -1,13 +1,26 @@
 import phoenixIcon from '../assets/phoenix-icon.png'
+import estudioOficina from '../assets/estudio-oficina.jpg'
 
 export default function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-fenixNavy-950">
+      <img
+        src={estudioOficina}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <div
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 78% 18%, rgba(221,154,51,0.18) 0%, rgba(6,18,28,0) 45%), linear-gradient(140deg, #06121c 0%, #0b1c2b 45%, #12283c 100%)',
+            'linear-gradient(100deg, rgba(6,18,28,0.96) 0%, rgba(6,18,28,0.88) 35%, rgba(11,28,43,0.62) 65%, rgba(11,28,43,0.4) 100%)',
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(circle at 78% 18%, rgba(221,154,51,0.16) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
 
