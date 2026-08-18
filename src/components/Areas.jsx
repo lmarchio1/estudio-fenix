@@ -1,6 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import computadoras from '../assets/computadoras.avif'
+import libroLapiz from '../assets/libro-lapiz.avif'
 
 const AREAS = [
   'Monotributistas',
@@ -27,17 +27,16 @@ export default function Areas() {
               description="Adaptamos el asesoramiento a la realidad de cada actividad."
             />
 
-            <div ref={ref} className="flex flex-wrap gap-3">
+            <div ref={ref} className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
               {AREAS.map((area, i) => (
-                <span
+                <div
                   key={area}
-                  className={`rounded-full border border-fenixNavy-100 bg-fenixNavy-50 px-4 py-2 text-sm font-medium text-fenixNavy-800 transition-transform duration-300 hover:-translate-y-0.5 hover:border-ember-300 hover:bg-ember-50 hover:text-ember-700 ${
-                    visible ? 'animate-pop' : 'opacity-0'
-                  }`}
+                  className={`flex items-center gap-3 ${visible ? 'animate-fade-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
-                  {area}
-                </span>
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-400" />
+                  <span className="text-sm font-medium text-fenixNavy-800">{area}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -45,8 +44,8 @@ export default function Areas() {
           <div className="lg:col-span-2">
             <div className="relative overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10">
               <img
-                src={computadoras}
-                alt="Estudio Fénix — espacio de trabajo digital"
+                src={libroLapiz}
+                alt="Estudio Fénix — asesoramiento con criterio y experiencia"
                 className="aspect-square w-full object-cover"
               />
               <div
