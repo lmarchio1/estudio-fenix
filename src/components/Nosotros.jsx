@@ -1,6 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import compuCafe from '../assets/compu-cafe.avif'
+import compuCafe from '../assets/compu-cafe.jpg'
 
 const SOCIOS = [
   {

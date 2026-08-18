@@ -1,6 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import libroLapiz from '../assets/libro-lapiz.avif'
+import libroLapiz from '../assets/libro-lapiz.jpg'
 
 const AREAS = [
   'Monotributistas',

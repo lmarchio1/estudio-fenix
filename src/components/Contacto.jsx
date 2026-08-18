@@ -13,7 +13,7 @@ export default function Contacto() {
       <img
         src={confianzaManos}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-x-0 top-0 h-80 w-full object-cover sm:inset-0 sm:h-full"
       />
       <div
         className="absolute inset-0"
