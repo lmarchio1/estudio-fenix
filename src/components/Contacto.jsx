@@ -32,8 +32,8 @@ export default function Contacto() {
           variant="dark"
           align="center"
           eyebrow="Hablemos"
-          title="Empecemos a ordenar tus números"
-          description="Escribinos y te respondemos a la brevedad para coordinar una consulta inicial sin cargo."
+          title="Coordinemos una consulta inicial sin cargo"
+          description="Contanos tu situación y te respondemos a la brevedad."
         />
 
         <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">

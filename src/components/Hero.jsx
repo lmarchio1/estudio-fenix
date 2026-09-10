@@ -27,13 +27,13 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="max-w-2xl">
           <span className="text-gold inline-flex animate-fade-up items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium ring-1 ring-inset ring-white/20 backdrop-blur motion-reduce:animate-none">
-            Contable · Impositivo · Laboral
+            Monotributo · Impositivo · Balances
           </span>
           <h1
             className="mt-6 animate-fade-up font-serif text-4xl font-bold tracking-tight text-white drop-shadow-sm motion-reduce:animate-none sm:text-5xl lg:text-6xl"
             style={{ animationDelay: '120ms' }}
           >
-            Tu estudio contable para renacer y crecer
+            Cumplimiento impositivo y contable, sin sorpresas
           </h1>
           <p
             className="mt-6 animate-fade-up text-lg leading-relaxed text-slate-200 motion-reduce:animate-none"
@@ -41,7 +41,7 @@ export default function Hero() {
           >
             Estudio Fénix — Ramírez & Marchioni acompaña a monotributistas, profesionales
             independientes y PyMEs con asesoramiento impositivo, certificaciones
-            contables y gestión laboral clara y a tiempo.
+            contables y confección de balances, en tiempo y forma.
           </p>
           <div
             className="mt-8 flex animate-fade-up flex-wrap gap-4 motion-reduce:animate-none"

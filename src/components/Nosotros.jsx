@@ -7,13 +7,13 @@ const SOCIOS = [
     initials: 'N',
     nombre: 'Nacho Ramírez',
     rol: 'Contador Público · Socio',
-    bio: 'Especializado en asesoramiento impositivo y monotributo. Falta completar la bio real.',
+    bio: 'Se especializa en monotributo y asesoramiento impositivo, con foco en anticipar vencimientos y evitar recategorizaciones fuera de término.',
   },
   {
     initials: 'L',
     nombre: 'Leandro Marchioni',
     rol: 'Contador Público · Socio',
-    bio: 'Especializado en gestión laboral y societaria. Falta completar la bio real.',
+    bio: 'Se especializa en certificaciones contables, balances y constitución de sociedades, acompañando a PyMEs y profesionales en su gestión societaria.',
   },
 ]
 
@@ -88,8 +88,8 @@ export default function Nosotros() {
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"
-            title="Un estudio que renace junto a cada cliente"
-            description="Como el ave que le da nombre al estudio, creemos en volver a empezar: ordenar los números, ponerse al día con el fisco y crecer con reglas claras. Dos socios, un mismo compromiso con cada cliente."
+            title="Dos contadores públicos, un mismo compromiso profesional"
+            description="Fundamos Estudio Fénix para ofrecer un servicio contable cercano, con atención directa de los socios en cada caso. Trabajamos con transparencia, cumplimiento de los plazos y una comunicación clara en cada etapa."
           />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

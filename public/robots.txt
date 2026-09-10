@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lmarchio1.github.io/estudio-fenix/sitemap.xml
