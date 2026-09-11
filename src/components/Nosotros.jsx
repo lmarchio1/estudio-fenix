@@ -86,15 +86,14 @@ export default function Nosotros() {
             spacing="mb-10 xl:mb-8"
             title="Nuestro estudio"
           >
-            <p className="mt-3 text-base text-slate-200 drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)] xl:text-[15px]">
-              Detrás de Estudio Fénix hay una historia de amistad que empezó estudiando y se
-              consolidó en la decisión de dar un salto: emprender nuestro propio camino.
+            <p className="mt-3 text-base text-slate-200 drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
+              Detrás de Estudio Fénix hay una amistad que nació estudiando y se consolidó en la
+              decisión de emprender nuestro propio camino.
             </p>
-            <p className="mt-3 text-base text-slate-300 xl:mt-2.5 xl:text-sm xl:leading-relaxed">
-              Por eso entendemos de primera mano lo que significa construir un proyecto desde cero,
-              con la ilusión, los desafíos y las dudas que eso implica. Nuestra propuesta no es solo
-              resolver tus obligaciones contables o tributarias, sino ser ese equipo de confianza que
-              te escucha, te ayuda y celebra tus avances.
+            <p className="mt-3 text-base text-slate-300">
+              Por eso sabemos lo que implica construir un proyecto desde cero. Nuestra propuesta no
+              es solo resolver tus obligaciones contables y tributarias, sino ser un equipo de
+              confianza que te escucha, te acompaña y celebra tus avances.
             </p>
           </SectionHeading>
 
