@@ -2,27 +2,29 @@ import SectionHeading from './ui/SectionHeading'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import libroLapiz from '../assets/libro-lapiz.jpg'
 
-const AREAS = [
+const CLIENTES = [
   'Monotributistas',
+  'Responsables inscriptos',
   'Profesionales independientes',
   'Comercios y PyMEs',
+  'Sociedades (SAS, SRL y SA)',
   'Emprendedores',
-  'Sociedades y SAS',
-  'Locación de inmuebles',
+  'Alquileres e inmuebles',
   'Comercio electrónico',
-  'Asociaciones civiles',
 ]
 
 export default function Areas() {
   const [ref, visible] = useRevealOnScroll(0.2)
 
   return (
-    <section id="areas" className="relative scroll-mt-24 overflow-hidden bg-white py-20 sm:py-28 lg:py-[127px]">
-      {/* foto a pantalla completa del lado derecho, solo desktop */}
-      <div className="absolute inset-y-0 right-0 hidden w-[42%] lg:block">
+    <section id="clientes" className="relative scroll-mt-24 overflow-hidden bg-white pb-20 sm:pb-28 xl:py-16">
+      {/* desktop: foto a pantalla completa del lado derecho */}
+      <div className="absolute inset-y-0 right-0 hidden w-[42%] xl:block">
         <img
           src={libroLapiz}
-          alt="Estudio Fénix — asesoramiento con criterio y experiencia"
+          alt="Estudio Fénix — asesoramiento profesional"
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
         />
         <div
@@ -34,41 +36,45 @@ export default function Areas() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="lg:max-w-lg">
+      {/* mobile/tablet: franja de foto a todo el ancho arriba de la sección */}
+      <div className="relative h-56 sm:h-72 xl:hidden">
+        <img
+          src={libroLapiz}
+          alt="Estudio Fénix — asesoramiento profesional"
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, rgba(6,18,28,0.1) 0%, rgba(6,18,28,0.35) 100%)',
+          }}
+        />
+        <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-ember-500 via-ember-300 to-ember-500" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 pt-12 sm:px-6 sm:pt-16 lg:px-8 xl:pt-0">
+        {/* misma altura mínima que Nosotros para que ambas secciones midan igual en desktop */}
+        <div className="xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-lg xl:flex-col xl:justify-center">
           <SectionHeading
-            eyebrow="A quién ayudamos"
-            title="Áreas en las que trabajamos"
-            description="Adaptamos el asesoramiento a la realidad de cada actividad."
+            eyebrow="Clientes"
+            title="A quiénes asesoramos"
+            description="Trabajamos con personas humanas y jurídicas de distintas actividades, adaptando el asesoramiento a cada caso."
           />
 
-          <div ref={ref} className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
-            {AREAS.map((area, i) => (
-              <div
-                key={area}
+          <ul ref={ref} className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            {CLIENTES.map((cliente, i) => (
+              <li
+                key={cliente}
                 className={`flex items-center gap-3 ${visible ? 'animate-fade-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ember-400" />
-                <span className="text-sm font-medium text-fenixNavy-800">{area}</span>
-              </div>
+                <span className="text-sm font-medium text-fenixNavy-800">{cliente}</span>
+              </li>
             ))}
-          </div>
-        </div>
-
-        {/* foto en cuadrado, solo mobile/tablet */}
-        <div className="relative mx-auto mt-12 aspect-square max-w-sm overflow-hidden rounded-2xl ring-1 ring-inset ring-fenixNavy-900/10 lg:hidden">
-          <img
-            src={libroLapiz}
-            alt="Estudio Fénix — asesoramiento con criterio y experiencia"
-            className="h-full w-full object-cover"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(180deg, rgba(6,18,28,0) 60%, rgba(6,18,28,0.35) 100%)',
-            }}
-          />
+          </ul>
         </div>
       </div>
     </section>

@@ -14,7 +14,7 @@ const SERVICES = [
   {
     title: 'Monotributo',
     description:
-      'Inscripción, categorización y recategorizaciones. Te avisamos antes de cada vencimiento para que nunca quedes mal categorizado.',
+      'Alta, categorización inicial y recategorizaciones semestrales. Control mensual de facturación y pagos, bajas y pase al régimen general.',
     icon: (
       <svg {...ICON_PROPS}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 14.25l6-6m-5.25-.75h.008v.008H9.75V7.5zm5.25 5.25h.008v.008h-.008v-.008zM4.5 6.75v10.5A2.25 2.25 0 006.75 19.5h10.5a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0017.25 4.5H6.75A2.25 2.25 0 004.5 6.75z" />
@@ -22,9 +22,9 @@ const SERVICES = [
     ),
   },
   {
-    title: 'Asesoramiento impositivo',
+    title: 'Impuestos',
     description:
-      'Planificación y liquidación de IVA, Ganancias e Ingresos Brutos, nacional y provincial, para que las decisiones fiscales acompañen al negocio.',
+      'Liquidación y presentación de declaraciones juradas de IVA, Ganancias, Bienes Personales e Ingresos Brutos, incluido Convenio Multilateral.',
     icon: (
       <svg {...ICON_PROPS}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3-15H6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 006 21h9a2.25 2.25 0 002.25-2.25V8.25L14.25 3z" />
@@ -35,17 +35,17 @@ const SERVICES = [
   {
     title: 'Certificaciones contables',
     description:
-      'Certificación de ingresos, saldos, capacidad económica y estados contables ante bancos, organismos y terceros.',
+      'Certificación de ingresos, origen de fondos para la compra de inmuebles o rodados, manifestación de bienes y otras certificaciones ante bancos y organismos.',
     icon: (
       <svg {...ICON_PROPS}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />
       </svg>
     ),
   },
   {
-    title: 'Balances',
+    title: 'Balances y estados contables',
     description:
-      'Confección y presentación de balances y estados contables, con información clara para tomar decisiones.',
+      'Confección de estados contables anuales, con informe del contador y legalización ante el Consejo Profesional de Ciencias Económicas.',
     icon: (
       <svg {...ICON_PROPS}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v6.75c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125C16.5 3.504 17.004 3 17.625 3h2.25c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -53,9 +53,9 @@ const SERVICES = [
     ),
   },
   {
-    title: 'Constitución de sociedades',
+    title: 'Sociedades',
     description:
-      'Constitución, inscripción y gestión societaria: SAS, SRL y sociedades anónimas, de la idea a la puesta en marcha.',
+      'Constitución de SAS y SRL, inscripción ante IGJ o DPPJ, rúbrica de libros y cumplimiento de las obligaciones societarias anuales.',
     icon: (
       <svg {...ICON_PROPS}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
@@ -63,12 +63,12 @@ const SERVICES = [
     ),
   },
   {
-    title: 'Consultoría y planeamiento',
+    title: 'Requerimientos y planes de pago',
     description:
-      'Acompañamiento estratégico en la toma de decisiones económicas, financieras y de gestión para PyMEs y emprendedores.',
+      'Contestación de requerimientos e intimaciones de ARCA y organismos provinciales, y adhesión a planes de facilidades de pago.',
     icon: (
       <svg {...ICON_PROPS}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
   },
@@ -76,12 +76,12 @@ const SERVICES = [
 
 export default function Servicios() {
   return (
-    <section id="servicios" className="scroll-mt-24 bg-white py-16 sm:py-20">
+    <section id="servicios" className="scroll-mt-24 bg-white pb-16 pt-20 sm:pb-20 sm:pt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Qué hacemos"
-          title="Servicios contables, impositivos y societarios"
-          description="Con foco en monotributistas, profesionales independientes y PyMEs que necesitan un estudio cercano y al día con la normativa."
+          eyebrow="Servicios"
+          title="Asesoramiento contable, impositivo y societario"
+          description="Para personas humanas y jurídicas: monotributistas, responsables inscriptos, profesionales independientes y sociedades."
         />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

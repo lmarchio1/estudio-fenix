@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { href: '#inicio', label: 'Inicio' },
   { href: '#servicios', label: 'Servicios' },
   { href: '#nosotros', label: 'Nosotros' },
-  { href: '#areas', label: 'Áreas' },
+  { href: '#clientes', label: 'Clientes' },
 ]
 
 export default function Header() {
@@ -14,29 +14,34 @@ export default function Header() {
   const [activeHref, setActiveHref] = useState('#inicio')
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    // Contacto no está en el menú pero se incluye para que, al llegar ahí,
+    // ningún link quede resaltado en vez de quedar marcado el anterior.
+    const hrefs = [...NAV_LINKS.map((link) => link.href), '#contacto']
 
-  useEffect(() => {
-    const sections = NAV_LINKS.map((link) => document.querySelector(link.href)).filter(Boolean)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveHref(`#${entry.target.id}`)
-        })
-      },
-      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-    )
-    sections.forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 8)
+      const probe = window.scrollY + window.innerHeight * 0.4
+      let current = hrefs[0]
+      for (const href of hrefs) {
+        const el = document.querySelector(href)
+        if (el && el.getBoundingClientRect().top + window.scrollY <= probe) current = href
+      }
+      setActiveHref(current)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [])
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 w-full transition-colors ${
-        isScrolled ? 'bg-fenixNavy-950/80 backdrop-blur-md' : 'bg-transparent'
+      className={`fixed inset-x-0 top-0 z-50 w-full transition-colors duration-300 ${
+        isScrolled || isOpen ? 'bg-fenixNavy-950/95 shadow-lg shadow-black/20 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">

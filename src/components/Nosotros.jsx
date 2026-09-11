@@ -7,13 +7,13 @@ const SOCIOS = [
     initials: 'N',
     nombre: 'Nacho Ramírez',
     rol: 'Contador Público · Socio',
-    bio: 'Se especializa en monotributo y asesoramiento impositivo, con foco en anticipar vencimientos y evitar recategorizaciones fuera de término.',
+    bio: 'Especialista en monotributo, impuestos nacionales y provinciales, y planificación fiscal para profesionales independientes.',
   },
   {
     initials: 'L',
     nombre: 'Leandro Marchioni',
     rol: 'Contador Público · Socio',
-    bio: 'Se especializa en certificaciones contables, balances y constitución de sociedades, acompañando a PyMEs y profesionales en su gestión societaria.',
+    bio: 'Especialista en certificaciones contables, estados contables y sociedades comerciales.',
   },
 ]
 
@@ -43,7 +43,7 @@ function SocioCard({ socio, delay }) {
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28 lg:py-[67px]">
+    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 pb-20 sm:pb-28 xl:py-16">
       <div
         className="absolute inset-0"
         style={{
@@ -53,10 +53,12 @@ export default function Nosotros() {
       />
 
       {/* foto a pantalla completa del lado izquierdo, solo desktop */}
-      <div className="absolute inset-y-0 left-0 hidden w-[42%] lg:block">
+      <div className="absolute inset-y-0 left-0 hidden w-[42%] xl:block">
         <img
           src={compuCafe}
           alt="Estudio Fénix — espacio de trabajo"
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
         />
         <div
@@ -68,28 +70,31 @@ export default function Nosotros() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* foto en cuadrado, solo mobile/tablet */}
-        <div className="relative mx-auto mb-12 aspect-square max-w-sm overflow-hidden rounded-2xl ring-1 ring-inset ring-white/10 lg:hidden">
-          <img
-            src={compuCafe}
-            alt="Estudio Fénix — espacio de trabajo"
-            className="h-full w-full object-cover"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(180deg, rgba(6,18,28,0) 55%, rgba(6,18,28,0.65) 100%)',
-            }}
-          />
-        </div>
+      {/* mobile/tablet: franja de foto a todo el ancho que se funde en el fondo */}
+      <div className="relative h-60 sm:h-80 xl:hidden">
+        <img
+          src={compuCafe}
+          alt="Estudio Fénix — espacio de trabajo"
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, rgba(6,18,28,0.15) 0%, rgba(6,18,28,0.35) 55%, rgba(6,18,28,1) 100%)',
+          }}
+        />
+      </div>
 
-        <div className="lg:ml-auto lg:max-w-2xl">
+      <div className="relative mx-auto -mt-10 max-w-7xl px-4 sm:-mt-14 sm:px-6 lg:px-8 xl:mt-0">
+        {/* misma altura mínima que Clientes para que ambas secciones midan igual en desktop */}
+        <div className="xl:ml-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[41rem] xl:flex-col xl:justify-center">
           <SectionHeading
             variant="dark"
-            eyebrow="Quiénes somos"
-            title="Dos contadores públicos, un mismo compromiso profesional"
-            description="Fundamos Estudio Fénix para ofrecer un servicio contable cercano, con atención directa de los socios en cada caso. Trabajamos con transparencia, cumplimiento de los plazos y una comunicación clara en cada etapa."
+            eyebrow="Nosotros"
+            title="Asesoramiento integral y personalizado"
+            description="Somos un estudio contable dedicado al asesoramiento impositivo, contable y societario de personas humanas y empresas. Cada cliente es atendido directamente por uno de los socios, con seguimiento permanente de su situación fiscal."
           />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

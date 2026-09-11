@@ -1,11 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Alto mínimo del contenido de las secciones con foto al costado (Nosotros y
+     Clientes), para que en desktop ambas midan lo mismo sin importar el texto. */
+  --split-min-h: 432px;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .animate-pop {
+    animation: none !important;
+  }
 }
 
 body {

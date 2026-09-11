@@ -1,13 +1,16 @@
 import Logo from './ui/Logo'
+import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
 
 const YEAR = new Date().getFullYear()
 
 const LINKS = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Áreas', href: '#areas' },
+  { label: 'Clientes', href: '#clientes' },
   { label: 'Contacto', href: '#contacto' },
 ]
+
+const LINK_CLASS = 'text-sm text-slate-400 transition-colors hover:text-white'
 
 export default function Footer() {
   return (
@@ -19,7 +22,7 @@ export default function Footer() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2">
             <Logo
               variant="light"
@@ -28,24 +31,52 @@ export default function Footer() {
               taglineClassName="text-xs"
               gap="gap-4"
             />
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-slate-400">
+              Estudio contable e impositivo con atención 100% online. Monotributo, impuestos,
+              certificaciones contables y balances para profesionales, comercios y sociedades.
+            </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white">Estudio</h3>
+            <h3 className="text-gold text-xs font-semibold uppercase tracking-wider">Estudio</h3>
             <ul className="mt-4 space-y-3">
               {LINKS.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-slate-400 hover:text-white">
+                  <a href={link.href} className={LINK_CLASS}>
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
+
+          <div>
+            <h3 className="text-gold text-xs font-semibold uppercase tracking-wider">Contacto</h3>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className={LINK_CLASS}>
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${EMAIL}`} className={`${LINK_CLASS} break-all`}>
+                  {EMAIL}
+                </a>
+              </li>
+              <li>
+                <a href={TELEFONO_URL} className={LINK_CLASS}>
+                  {TELEFONO}
+                </a>
+              </li>
+              <li className="text-sm text-slate-400">Atención 100% online</li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8">
-          <p className="text-xs text-slate-500">© {YEAR} Estudio Fénix — Ramírez & Marchioni. Todos los derechos reservados.</p>
+          <p className="text-xs text-slate-500">
+            © {YEAR} Estudio Fénix — Ramírez & Marchioni. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
