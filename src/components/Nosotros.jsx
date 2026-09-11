@@ -82,7 +82,7 @@ export default function Nosotros() {
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"
-            title="Asesoramiento integral y personalizado"
+            title="Nuestra historia"
             description="Somos un estudio de contadores públicos dedicado al asesoramiento contable, impositivo y societario de profesionales, comercios y empresas."
           >
             <p className="mt-3 text-base text-slate-300">
