@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import SectionHeading from './ui/SectionHeading'
+import RevealImage from './ui/RevealImage'
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import confianzaManos from '../assets/confianza-manos.jpg'
-import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
+import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_PATH, WHATSAPP_URL } from '../data/contacto'
 
 // Endpoint tipo Formspree (JSON). Se configura como secret en GitHub Actions.
 // Sin endpoint, el formulario abre el mail del visitante con la consulta redactada.
@@ -27,7 +29,7 @@ const CANALES = [
     external: true,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.44 1.32 4.94L2 22l5.29-1.39a9.9 9.9 0 004.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.2 8.2 0 01-1.27-4.38c0-4.55 3.7-8.25 8.27-8.25 4.55 0 8.25 3.7 8.25 8.25 0 4.56-3.7 8.27-8.25 8.27zm4.52-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.06 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z" />
+        <path d={WHATSAPP_PATH} />
       </svg>
     ),
   },
@@ -49,15 +51,6 @@ const CANALES = [
     icon: (
       <svg {...ICON_PROPS}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a1.5 1.5 0 001.5-1.5v-2.291a1.125 1.125 0 00-.852-1.09l-4.036-1.01a1.125 1.125 0 00-1.173.417l-.97 1.293a11.25 11.25 0 01-6.038-6.037l1.294-.971a1.125 1.125 0 00.416-1.173L8.85 3.352a1.125 1.125 0 00-1.091-.852H5.47a1.5 1.5 0 00-1.5 1.5v2.25z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Modalidad',
-    value: 'Atención 100% online, con reuniones por videollamada',
-    icon: (
-      <svg {...ICON_PROPS}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
       </svg>
     ),
   },
@@ -94,6 +87,8 @@ function Canal({ canal }) {
 export default function Contacto() {
   const [form, setForm] = useState(INITIAL_FORM)
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [gridRef, gridVisible] = useRevealOnScroll(0.1)
+  const reveal = gridVisible ? 'animate-fade-up' : 'opacity-0'
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -127,8 +122,8 @@ export default function Contacto() {
 
   return (
     <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28">
-      <div className="absolute inset-x-0 top-0 h-80 w-full sm:inset-0 sm:h-full">
-        <img src={confianzaManos} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+      <div className="absolute inset-x-0 top-0 h-80 w-full overflow-hidden sm:inset-0 sm:h-full">
+        <RevealImage src={confianzaManos} className="h-full w-full object-cover" />
         <div
           className="absolute inset-0 sm:hidden"
           style={{
@@ -148,7 +143,7 @@ export default function Contacto() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 85% 15%, rgba(221,154,51,0.15) 0%, rgba(6,18,28,0) 45%)',
+            'radial-gradient(circle at 85% 15%, rgba(200,162,90,0.15) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
 
@@ -161,16 +156,18 @@ export default function Contacto() {
           description="Completá el formulario o escribinos por el medio que prefieras, y coordinamos una reunión por videollamada."
         />
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <div className="grid gap-3 sm:grid-cols-2 lg:order-2 lg:col-span-2 lg:grid-cols-1 lg:content-start">
-            {CANALES.map((canal) => (
-              <Canal key={canal.label} canal={canal} />
+        <div ref={gridRef} className="grid grid-cols-1 gap-6 lg:grid-cols-5">
+          <div className="grid gap-3 sm:grid-cols-3 lg:order-2 lg:col-span-2 lg:grid-cols-1 lg:content-start">
+            {CANALES.map((canal, i) => (
+              <div key={canal.label} className={reveal} style={{ animationDelay: `${150 + i * 90}ms` }}>
+                <Canal canal={canal} />
+              </div>
             ))}
           </div>
 
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 gap-4 rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur sm:grid-cols-2 sm:p-8 lg:order-1 lg:col-span-3"
+            className={`grid grid-cols-1 gap-4 rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur sm:grid-cols-2 sm:p-8 lg:order-1 lg:col-span-3 ${reveal}`}
           >
             <div>
               <label htmlFor="nombre" className={LABEL}>Nombre y apellido</label>

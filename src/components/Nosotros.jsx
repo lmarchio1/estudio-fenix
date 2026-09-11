@@ -1,4 +1,5 @@
 import SectionHeading from './ui/SectionHeading'
+import RevealImage from './ui/RevealImage'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import compuCafe from '../assets/compu-cafe.jpg'
 
@@ -48,19 +49,13 @@ export default function Nosotros() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 12% 88%, rgba(221,154,51,0.12) 0%, rgba(11,28,43,0) 45%)',
+            'radial-gradient(circle at 12% 88%, rgba(200,162,90,0.12) 0%, rgba(11,28,43,0) 45%)',
         }}
       />
 
       {/* foto a pantalla completa del lado izquierdo, solo desktop */}
-      <div className="absolute inset-y-0 left-0 hidden w-[42%] xl:block">
-        <img
-          src={compuCafe}
-          alt="Estudio Fénix — espacio de trabajo"
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
+      <div className="absolute inset-y-0 left-0 hidden w-[42%] overflow-hidden xl:block">
+        <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover" />
         <div
           className="absolute inset-0"
           style={{
@@ -71,14 +66,8 @@ export default function Nosotros() {
       </div>
 
       {/* mobile/tablet: franja de foto a todo el ancho que se funde en el fondo */}
-      <div className="relative h-60 sm:h-80 xl:hidden">
-        <img
-          src={compuCafe}
-          alt="Estudio Fénix — espacio de trabajo"
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
+      <div className="relative h-60 overflow-hidden sm:h-80 xl:hidden">
+        <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover" />
         <div
           className="absolute inset-0"
           style={{
@@ -92,11 +81,21 @@ export default function Nosotros() {
         <div className="xl:ml-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[41rem] xl:flex-col xl:justify-center">
           <SectionHeading
             variant="dark"
-            eyebrow="Nosotros"
+            eyebrow="Quiénes somos"
             title="Asesoramiento integral y personalizado"
-            description="Somos un estudio contable dedicado al asesoramiento impositivo, contable y societario de personas humanas y empresas. Cada cliente es atendido directamente por uno de los socios, con seguimiento permanente de su situación fiscal."
-          />
+            description="Somos un estudio de contadores públicos dedicado al asesoramiento contable, impositivo y societario de profesionales, comercios y empresas."
+          >
+            <p className="mt-3 text-base text-slate-300">
+              Nuestro objetivo es brindar un servicio de excelencia, basado en el conocimiento
+              técnico, la actualización permanente en materia tributaria y el compromiso con cada
+              cliente, para facilitar la toma de decisiones y el cumplimiento de sus obligaciones.
+            </p>
+          </SectionHeading>
 
+          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+            Socios
+            <span className="h-px flex-1 bg-white/10" />
+          </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {SOCIOS.map((socio, i) => (
               <SocioCard key={socio.nombre + i} socio={socio} delay={i * 120} />

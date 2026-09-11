@@ -46,34 +46,22 @@ const PILARES = [
   },
 ]
 
-// Bordes: en mobile (2 columnas) separa la segunda columna y la primera fila;
-// en desktop (4 columnas) separa cada ítem del anterior.
-const BORDES = [
-  'border-b border-white/10 lg:border-b-0',
-  'border-b border-l border-white/10 lg:border-b-0',
-  'lg:border-l lg:border-white/10',
-  'border-l border-white/10',
-]
-
 export default function Pilares() {
   return (
-    <div className="relative border-t border-white/10 bg-fenixNavy-950/60 backdrop-blur-sm">
-      <ul className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
+    <div className="relative z-10 -mt-16 px-4 sm:px-6 lg:px-8">
+      <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl bg-slate-200 shadow-xl shadow-fenixNavy-950/10 ring-1 ring-slate-200 lg:grid-cols-4">
         {PILARES.map((pilar, i) => (
           <li
             key={pilar.title}
-            className={`group flex gap-3 px-4 py-6 transition-colors duration-300 hover:bg-white/[0.04] sm:px-6 lg:px-8 lg:py-8 ${BORDES[i]}`}
+            className="group relative animate-fade-up bg-white p-5 transition-colors duration-300 hover:bg-ember-50/60 sm:p-6"
+            style={{ animationDelay: `${600 + i * 100}ms` }}
           >
-            <span className="icon-gold mt-0.5 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110">
+            <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-ember-400 transition-transform duration-300 group-hover:scale-x-100" />
+            <span className="icon-gold-dark inline-flex h-10 w-10 items-center justify-center rounded-full bg-ember-50 ring-1 ring-inset ring-ember-200 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110">
               {pilar.icon}
             </span>
-            <span>
-              <span className="block text-sm font-semibold text-white">{pilar.title}</span>
-              <span className="mt-1.5 block h-px w-6 bg-ember-400/70 transition-all duration-300 group-hover:w-12" />
-              <span className="mt-2 block text-xs leading-relaxed text-slate-400 transition-colors duration-300 group-hover:text-slate-300 sm:text-sm">
-                {pilar.description}
-              </span>
-            </span>
+            <p className="mt-3 text-sm font-semibold leading-snug text-fenixNavy-900">{pilar.title}</p>
+            <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">{pilar.description}</p>
           </li>
         ))}
       </ul>

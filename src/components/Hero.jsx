@@ -1,5 +1,4 @@
 import estudioOficina from '../assets/estudio-oficina.jpg'
-import Pilares from './Pilares'
 
 export default function Hero() {
   return (
@@ -7,7 +6,7 @@ export default function Hero() {
       <img
         src={estudioOficina}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full animate-settle object-cover"
       />
       <div
         className="absolute inset-0"
@@ -20,13 +19,13 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 78% 18%, rgba(221,154,51,0.16) 0%, rgba(6,18,28,0) 45%)',
+            'radial-gradient(circle at 78% 18%, rgba(200,162,90,0.16) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
       {/* en mobile el texto ocupa todo el ancho: oscurecer parejo para que se lea */}
       <div className="absolute inset-0 bg-fenixNavy-950/45 lg:hidden" />
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
+      <div className="relative mx-auto max-w-7xl px-4 pb-28 pt-28 sm:px-6 lg:px-8 lg:pb-40 lg:pt-36">
         <div className="max-w-2xl">
           <span className="text-gold inline-flex animate-fade-up items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] ring-1 ring-inset ring-white/20 backdrop-blur motion-reduce:animate-none">
             Contabilidad · Impuestos · Balances
@@ -64,8 +63,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <Pilares />
     </section>
   )
 }

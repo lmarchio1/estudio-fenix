@@ -1,5 +1,18 @@
 import Logo from './ui/Logo'
-import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
+import {
+  EMAIL,
+  LINKEDIN_PATH,
+  LINKEDIN_URL,
+  TELEFONO,
+  TELEFONO_URL,
+  WHATSAPP_PATH,
+  WHATSAPP_URL,
+} from '../data/contacto'
+
+const REDES = [
+  { label: 'WhatsApp', href: WHATSAPP_URL, path: WHATSAPP_PATH, hover: 'hover:bg-[#25D366]' },
+  { label: 'LinkedIn', href: LINKEDIN_URL, path: LINKEDIN_PATH, hover: 'hover:bg-[#0A66C2]' },
+]
 
 const YEAR = new Date().getFullYear()
 
@@ -18,7 +31,7 @@ export default function Footer() {
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(circle at 8% 0%, rgba(221,154,51,0.1) 0%, rgba(6,18,28,0) 45%)',
+          background: 'radial-gradient(circle at 8% 0%, rgba(200,162,90,0.1) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -32,8 +45,8 @@ export default function Footer() {
               gap="gap-4"
             />
             <p className="mt-6 max-w-md text-sm leading-relaxed text-slate-400">
-              Estudio contable e impositivo con atención 100% online. Monotributo, impuestos,
-              certificaciones contables y balances para profesionales, comercios y sociedades.
+              Estudio contable e impositivo. Monotributo, impuestos, certificaciones contables
+              y balances para profesionales, comercios y sociedades.
             </p>
           </div>
 
@@ -54,11 +67,6 @@ export default function Footer() {
             <h3 className="text-gold text-xs font-semibold uppercase tracking-wider">Contacto</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className={LINK_CLASS}>
-                  WhatsApp
-                </a>
-              </li>
-              <li>
                 <a href={`mailto:${EMAIL}`} className={`${LINK_CLASS} break-all`}>
                   {EMAIL}
                 </a>
@@ -68,8 +76,24 @@ export default function Footer() {
                   {TELEFONO}
                 </a>
               </li>
-              <li className="text-sm text-slate-400">Atención 100% online</li>
             </ul>
+            <div className="mt-5 flex gap-3">
+              {REDES.map((red) => (
+                <a
+                  key={red.label}
+                  href={red.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={red.label}
+                  title={red.label}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-slate-300 ring-1 ring-inset ring-white/15 transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:ring-transparent ${red.hover}`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]" aria-hidden="true">
+                    <path d={red.path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

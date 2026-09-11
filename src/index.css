@@ -5,7 +5,7 @@
 :root {
   /* Alto mínimo del contenido de las secciones con foto al costado (Nosotros y
      Clientes), para que en desktop ambas midan lo mismo sin importar el texto. */
-  --split-min-h: 432px;
+  --split-min-h: 524px;
 }
 
 html {
@@ -17,7 +17,8 @@ html {
     scroll-behavior: auto;
   }
   .animate-fade-up,
-  .animate-pop {
+  .animate-pop,
+  .animate-settle {
     animation: none !important;
   }
 }
@@ -32,7 +33,7 @@ body {
   /* Dorado metálico uniforme: mismo degradé (claro arriba, oscuro abajo) en
      toda la página, para usar sobre fondos oscuros (navy) */
   .text-gold {
-    background-image: linear-gradient(180deg, #f6dfa0 0%, #d9a52a 50%, #b9861a 100%);
+    background-image: linear-gradient(180deg, #ecdcb4 0%, #c8a25a 50%, #a8843f 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -40,7 +41,7 @@ body {
 
   /* Misma fórmula, más oscura para mantener contraste sobre fondos claros (blanco) */
   .text-gold-dark {
-    background-image: linear-gradient(180deg, #c99a2e 0%, #a67c1a 50%, #8a6512 100%);
+    background-image: linear-gradient(180deg, #b08a45 0%, #8c6a2a 50%, #6f5322 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -49,9 +50,9 @@ body {
   /* Mismo dorado pero en color plano (no se puede usar el degradé de texto
      en íconos SVG con currentColor), para que combinen con .text-gold */
   .icon-gold {
-    color: #d9a52a;
+    color: #c8a25a;
   }
   .icon-gold-dark {
-    color: #a67c1a;
+    color: #8c6a2a;
   }
 }

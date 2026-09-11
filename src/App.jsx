@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Pilares from './components/Pilares'
 import Servicios from './components/Servicios'
 import Nosotros from './components/Nosotros'
 import Areas from './components/Areas'
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Pilares />
         <Servicios />
         <Nosotros />
         <Areas />

@@ -18,18 +18,19 @@ export default {
           900: '#0b1c2b',
           950: '#06121c',
         },
-        // Dorado ember: brasa/fuego del ave fénix, usado como acento.
+        // Dorado viejo (champagne): único color de acento del sitio. 400 es el tono
+        // principal (botones, íconos sobre oscuro); 600 para texto sobre blanco.
         ember: {
-          50: '#fdf6ea',
-          100: '#faebc8',
-          200: '#f3d48c',
-          300: '#eab654',
-          400: '#dd9a33',
-          500: '#c17d1f',
-          600: '#9c621a',
-          700: '#7a4c17',
-          800: '#5c3a15',
-          900: '#402910',
+          50: '#faf6ee',
+          100: '#f2e9d6',
+          200: '#e5d3ad',
+          300: '#d8bd84',
+          400: '#c8a25a',
+          500: '#b08a45',
+          600: '#8c6a2a',
+          700: '#6f5322',
+          800: '#54401c',
+          900: '#3a2c14',
         },
       },
       fontFamily: {
@@ -46,10 +47,15 @@ export default {
           '60%': { opacity: '1', transform: 'scale(1.15)' },
           '100%': { transform: 'scale(1)' },
         },
+        settle: {
+          '0%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.8s ease-out both',
         pop: 'pop 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
+        settle: 'settle 2.4s ease-out both',
       },
     },
   },
