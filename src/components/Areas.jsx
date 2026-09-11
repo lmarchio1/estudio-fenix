@@ -1,8 +1,6 @@
 import SectionHeading from './ui/SectionHeading'
 import RevealImage from './ui/RevealImage'
-import { WhatsAppIcon } from './ui/BrandIcons'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import { WHATSAPP_URL } from '../data/contacto'
 import libroLapiz from '../assets/libro-lapiz.jpg'
 
 const CLIENTES = [
@@ -59,7 +57,7 @@ export default function Areas() {
             {CLIENTES.map((cliente, i) => (
               <li
                 key={cliente}
-                className={`group flex items-center gap-3 border-b border-slate-200 py-3.5 ${visible ? 'animate-fade-up' : 'opacity-0'}`}
+                className={`group flex items-center gap-3 border-b border-slate-200 py-3.5 xl:py-5 ${visible ? 'animate-fade-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${i * 60}ms` }}
               >
                 <span className="icon-gold-dark flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ember-50 ring-1 ring-inset ring-ember-200 transition-transform duration-300 group-hover:scale-110">
@@ -67,22 +65,10 @@ export default function Areas() {
                     <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                   </svg>
                 </span>
-                <span className="text-[15px] font-medium text-fenixNavy-800">{cliente}</span>
+                <span className="text-[15px] font-medium xl:text-base text-fenixNavy-800">{cliente}</span>
               </li>
             ))}
           </ul>
-
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="group mt-8 inline-flex items-center gap-3 self-start text-sm font-semibold text-fenixNavy-900"
-          >
-            <WhatsAppIcon className="h-9 w-9 transition-transform duration-300 group-hover:scale-110" />
-            <span className="border-b border-transparent transition-colors duration-300 group-hover:border-fenixNavy-900">
-              ¿Tu actividad no está en la lista? Consultanos
-            </span>
-          </a>
         </div>
       </div>
     </section>
