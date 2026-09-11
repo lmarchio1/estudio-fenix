@@ -82,8 +82,8 @@ export default function Nosotros() {
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"
-            title="Nuestra historia"
-            description="Somos un estudio de contadores públicos que brinda asesoramiento integral a personas y empresas."
+            title="Nuestro estudio"
+            description="Nos conocimos cursando un posgrado y, con la misma idea de emprender, decidimos fundar Estudio Fénix."
           >
             <p className="mt-3 text-base text-slate-300">
               Nuestro objetivo es brindar un servicio de excelencia, basado en el conocimiento
