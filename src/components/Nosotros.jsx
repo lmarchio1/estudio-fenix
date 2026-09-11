@@ -23,13 +23,13 @@ function SocioCard({ socio, delay }) {
   return (
     <div
       ref={ref}
-      className={`group rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:ring-ember-300/30 hover:shadow-lg hover:shadow-ember-900/10 ${
+      className={`group rounded-2xl bg-white/5 p-6 xl:p-5 ring-1 ring-inset ring-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:ring-ember-300/30 hover:shadow-lg hover:shadow-ember-900/10 ${
         visible ? 'animate-fade-up' : 'opacity-0'
       }`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="flex items-center gap-4">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ember-400/15 ring-1 ring-inset ring-ember-300/30 transition-transform duration-300 group-hover:scale-110">
+      <div className="flex items-center gap-4 xl:gap-3">
+        <div className="flex h-14 w-14 shrink-0 items-center xl:h-12 xl:w-12 justify-center rounded-full bg-ember-400/15 ring-1 ring-inset ring-ember-300/30 transition-transform duration-300 group-hover:scale-110">
           <span className="text-gold font-serif text-lg font-bold">{socio.initials}</span>
         </div>
         <div>
@@ -54,7 +54,7 @@ export default function Nosotros() {
       />
 
       {/* foto a pantalla completa del lado izquierdo, solo desktop */}
-      <div className="absolute inset-y-0 left-0 hidden w-[42%] overflow-hidden xl:block">
+      <div className="absolute inset-y-0 left-0 hidden w-1/2 overflow-hidden xl:block">
         <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover" />
         <div
           className="absolute inset-0"
@@ -78,7 +78,7 @@ export default function Nosotros() {
 
       <div className="relative mx-auto -mt-10 max-w-7xl px-4 sm:-mt-14 sm:px-6 lg:px-8 xl:mt-0">
         {/* misma altura mínima que Clientes para que ambas secciones midan igual en desktop */}
-        <div className="xl:ml-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[41rem] xl:flex-col xl:justify-center">
+        <div className="xl:ml-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[35rem] xl:flex-col xl:justify-center">
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"
