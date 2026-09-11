@@ -143,7 +143,7 @@ export default function Contacto() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 85% 15%, rgba(200,162,90,0.15) 0%, rgba(6,18,28,0) 45%)',
+            'radial-gradient(circle at 85% 15%, rgba(212,164,55,0.15) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
 

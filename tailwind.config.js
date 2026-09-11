@@ -18,19 +18,19 @@ export default {
           900: '#0b1c2b',
           950: '#06121c',
         },
-        // Dorado viejo (champagne): único color de acento del sitio. 400 es el tono
-        // principal (botones, íconos sobre oscuro); 600 para texto sobre blanco.
+        // Dorado: único color de acento del sitio. 400 es el tono principal
+        // (botones, íconos sobre oscuro); 600 para texto sobre blanco.
         ember: {
-          50: '#faf6ee',
-          100: '#f2e9d6',
-          200: '#e5d3ad',
-          300: '#d8bd84',
-          400: '#c8a25a',
-          500: '#b08a45',
-          600: '#8c6a2a',
-          700: '#6f5322',
-          800: '#54401c',
-          900: '#3a2c14',
+          50: '#fcf7ea',
+          100: '#f7ebc9',
+          200: '#efd592',
+          300: '#e5bd5c',
+          400: '#d4a437',
+          500: '#b98a26',
+          600: '#97701d',
+          700: '#77571a',
+          800: '#5a4318',
+          900: '#3f2f12',
         },
       },
       fontFamily: {

@@ -31,7 +31,7 @@ export default function Footer() {
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(circle at 8% 0%, rgba(200,162,90,0.1) 0%, rgba(6,18,28,0) 45%)',
+          background: 'radial-gradient(circle at 8% 0%, rgba(212,164,55,0.1) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

@@ -49,7 +49,7 @@ export default function Nosotros() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 12% 88%, rgba(200,162,90,0.12) 0%, rgba(11,28,43,0) 45%)',
+            'radial-gradient(circle at 12% 88%, rgba(212,164,55,0.12) 0%, rgba(11,28,43,0) 45%)',
         }}
       />
 

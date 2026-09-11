@@ -19,7 +19,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 78% 18%, rgba(200,162,90,0.16) 0%, rgba(6,18,28,0) 45%)',
+            'radial-gradient(circle at 78% 18%, rgba(212,164,55,0.16) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
       {/* en mobile el texto ocupa todo el ancho: oscurecer parejo para que se lea */}
