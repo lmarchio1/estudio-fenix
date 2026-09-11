@@ -1,6 +1,6 @@
 import Logo from './ui/Logo'
 import { LinkedInIcon, WhatsAppIcon } from './ui/BrandIcons'
-import { EMAIL, LINKEDIN_URL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
+import { EMAIL, LINKEDIN_URL, WHATSAPP_URL } from '../data/contacto'
 
 const REDES = [
   { label: 'WhatsApp', href: WHATSAPP_URL, Icon: WhatsAppIcon },
@@ -62,11 +62,6 @@ export default function Footer() {
               <li>
                 <a href={`mailto:${EMAIL}`} className={`${LINK_CLASS} break-all`}>
                   {EMAIL}
-                </a>
-              </li>
-              <li>
-                <a href={TELEFONO_URL} className={LINK_CLASS}>
-                  {TELEFONO}
                 </a>
               </li>
             </ul>

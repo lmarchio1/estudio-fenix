@@ -4,7 +4,7 @@ import RevealImage from './ui/RevealImage'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import confianzaManos from '../assets/confianza-manos.jpg'
 import { WhatsAppIcon } from './ui/BrandIcons'
-import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
+import { EMAIL, WHATSAPP_URL } from '../data/contacto'
 
 // Endpoint tipo Formspree (JSON). Se configura como secret en GitHub Actions.
 // Sin endpoint, el formulario abre el mail del visitante con la consulta redactada.
@@ -31,16 +31,6 @@ const CANALES = [
       <svg {...ICON_PROPS}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0119.5 19.5h-15a2.25 2.25 0 01-2.25-2.25V6.75z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75l8.25 6.5 8.25-6.5" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Teléfono',
-    value: TELEFONO,
-    href: TELEFONO_URL,
-    icon: (
-      <svg {...ICON_PROPS}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a1.5 1.5 0 001.5-1.5v-2.291a1.125 1.125 0 00-.852-1.09l-4.036-1.01a1.125 1.125 0 00-1.173.417l-.97 1.293a11.25 11.25 0 01-6.038-6.037l1.294-.971a1.125 1.125 0 00.416-1.173L8.85 3.352a1.125 1.125 0 00-1.091-.852H5.47a1.5 1.5 0 00-1.5 1.5v2.25z" />
       </svg>
     ),
   },
@@ -101,7 +91,7 @@ export default function Contacto() {
     e.preventDefault()
 
     if (!CONTACT_ENDPOINT) {
-      const cuerpo = `Nombre: ${form.nombre}\nEmail: ${form.email}\nTeléfono: ${form.telefono || '-'}\n\n${form.mensaje}`
+      const cuerpo = `Nombre: ${form.nombre}\nEmail: ${form.email}\nCelular: ${form.telefono || '-'}\n\n${form.mensaje}`
       window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(ASUNTO)}&body=${encodeURIComponent(cuerpo)}`
       return
     }
@@ -162,7 +152,7 @@ export default function Contacto() {
             <div className={reveal} style={{ animationDelay: '150ms' }}>
               <WhatsAppDestacado />
             </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="grid gap-3">
               {CANALES.map((canal, i) => (
                 <div key={canal.label} className={reveal} style={{ animationDelay: `${240 + i * 90}ms` }}>
                   <Canal canal={canal} />
@@ -184,7 +174,7 @@ export default function Contacto() {
               <input id="email" name="email" type="email" autoComplete="email" required value={form.email} onChange={handleChange} className={FIELD} />
             </div>
             <div>
-              <label htmlFor="telefono" className={LABEL}>Teléfono (opcional)</label>
+              <label htmlFor="telefono" className={LABEL}>Celular (opcional)</label>
               <input id="telefono" name="telefono" type="tel" autoComplete="tel" value={form.telefono} onChange={handleChange} className={FIELD} />
             </div>
             <div className="sm:col-span-2">
