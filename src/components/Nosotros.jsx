@@ -54,8 +54,8 @@ export default function Nosotros() {
       />
 
       {/* foto a pantalla completa del lado izquierdo, solo desktop */}
-      <div className="absolute inset-y-0 left-0 hidden w-1/2 overflow-hidden xl:block">
-        <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover" />
+      <div className="group/foto absolute inset-y-0 left-0 hidden w-1/2 overflow-hidden xl:block">
+        <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover group-hover/foto:scale-105" />
         <div
           className="absolute inset-0"
           style={{
@@ -76,9 +76,10 @@ export default function Nosotros() {
         />
       </div>
 
-      <div className="relative mx-auto -mt-10 max-w-7xl px-4 sm:-mt-14 sm:px-6 lg:px-8 xl:mt-0">
+      {/* el contenedor deja pasar el mouse para que la foto de atrás reciba el hover */}
+      <div className="relative mx-auto -mt-10 max-w-7xl px-4 sm:-mt-14 sm:px-6 lg:px-8 xl:pointer-events-none xl:mt-0">
         {/* misma altura mínima que Clientes para que ambas secciones midan igual en desktop */}
-        <div className="xl:ml-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[35rem] xl:flex-col xl:justify-center">
+        <div className="xl:pointer-events-auto xl:ml-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[35rem] xl:flex-col xl:justify-center">
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"
