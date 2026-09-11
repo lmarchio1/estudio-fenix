@@ -37,14 +37,14 @@ function SocioCard({ socio, delay }) {
           <p className="text-gold text-sm">{socio.rol}</p>
         </div>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300">{socio.bio}</p>
+      <p className="mt-4 text-sm leading-relaxed text-slate-300 xl:mt-3">{socio.bio}</p>
     </div>
   )
 }
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 pb-20 sm:pb-28 xl:py-16">
+    <section id="nosotros" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 pb-20 sm:pb-28 xl:py-10">
       <div
         className="absolute inset-0"
         style={{
@@ -82,10 +82,11 @@ export default function Nosotros() {
           <SectionHeading
             variant="dark"
             eyebrow="Quiénes somos"
+            spacing="mb-10 xl:mb-8"
             title="Nuestro estudio"
             description="Nos conocimos cursando un posgrado y, con la misma idea de emprender, decidimos fundar Estudio Fénix."
           >
-            <p className="mt-3 text-base text-slate-300">
+            <p className="mt-3 text-base text-slate-300 xl:text-[15px]">
               Nuestro objetivo es brindar un servicio de excelencia, basado en el conocimiento
               técnico, la actualización permanente en materia tributaria y el compromiso con cada
               cliente, para facilitar la toma de decisiones y el cumplimiento de sus obligaciones.

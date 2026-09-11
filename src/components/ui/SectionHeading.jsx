@@ -15,7 +15,7 @@ const STYLES = {
   },
 }
 
-export default function SectionHeading({ eyebrow, title, description, align = 'left', variant = 'light', children }) {
+export default function SectionHeading({ eyebrow, title, description, align = 'left', variant = 'light', spacing = 'mb-10', children }) {
   const [ref, visible] = useRevealOnScroll(0.3)
   const alignment = align === 'center' ? 'text-center mx-auto' : 'text-left'
   const styles = STYLES[variant]
@@ -23,7 +23,7 @@ export default function SectionHeading({ eyebrow, title, description, align = 'l
   return (
     <div
       ref={ref}
-      className={`max-w-2xl ${alignment} mb-10 transition-all duration-700 ease-out motion-reduce:transition-none ${
+      className={`max-w-2xl ${alignment} ${spacing} transition-all duration-700 ease-out motion-reduce:transition-none ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100'
       }`}
     >

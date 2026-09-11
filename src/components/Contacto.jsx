@@ -112,7 +112,7 @@ export default function Contacto() {
   }
 
   return (
-    <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28">
+    <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28 lg:py-16">
       <div className="absolute inset-x-0 top-0 h-80 w-full overflow-hidden sm:inset-0 sm:h-full">
         <RevealImage src={confianzaManos} className="h-full w-full object-cover" />
         <div
@@ -163,7 +163,7 @@ export default function Contacto() {
 
           <form
             onSubmit={handleSubmit}
-            className={`grid grid-cols-1 gap-4 rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur sm:grid-cols-2 sm:p-8 lg:order-1 lg:col-span-3 ${reveal}`}
+            className={`grid grid-cols-1 gap-4 rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur sm:grid-cols-2 sm:p-8 lg:order-1 lg:p-7 lg:col-span-3 ${reveal}`}
           >
             <div className="sm:col-span-2">
               <label htmlFor="nombre" className={LABEL}>Nombre y apellido</label>
@@ -179,7 +179,7 @@ export default function Contacto() {
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="mensaje" className={LABEL}>Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows={4} required value={form.mensaje} onChange={handleChange} className={FIELD} />
+              <textarea id="mensaje" name="mensaje" rows={3} required value={form.mensaje} onChange={handleChange} className={FIELD} />
             </div>
 
             <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">

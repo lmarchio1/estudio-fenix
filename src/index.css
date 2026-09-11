@@ -5,7 +5,7 @@
 :root {
   /* Alto mínimo del contenido de las secciones con foto al costado (Nosotros y
      Clientes), para que en desktop ambas midan lo mismo sin importar el texto. */
-  --split-min-h: 524px;
+  --split-min-h: 496px;
 }
 
 html {

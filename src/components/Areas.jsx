@@ -18,7 +18,7 @@ export default function Areas() {
   const [ref, visible] = useRevealOnScroll(0.2)
 
   return (
-    <section id="clientes" className="relative scroll-mt-24 overflow-hidden bg-white pb-20 sm:pb-28 xl:py-16">
+    <section id="clientes" className="relative scroll-mt-24 overflow-hidden bg-white pb-20 sm:pb-28 xl:py-10">
       {/* desktop: foto a pantalla completa del lado derecho. Es una imagen muy clara,
           así que lleva un velo azul que le da profundidad y la separa del fondo blanco,
           más un filete dorado vertical en el borde */}
@@ -60,6 +60,7 @@ export default function Areas() {
         <div className="xl:pointer-events-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[35rem] xl:flex-col xl:justify-center">
           <SectionHeading
             eyebrow="Clientes"
+            spacing="mb-10 xl:mb-8"
             title="A quiénes asesoramos"
             description="Trabajamos con personas humanas y jurídicas de distintas actividades, adaptando el asesoramiento a cada caso."
           />
