@@ -30,29 +30,31 @@ body {
 }
 
 @layer utilities {
-  /* Dorado metálico uniforme: mismo degradé (claro arriba, oscuro abajo) en
-     toda la página, para usar sobre fondos oscuros (navy) */
+  /* Dorado metálico: un único degradé (claro arriba, más profundo abajo) que
+     comparten las letras (.text-gold) y los botones (.bg-gold) sobre fondo oscuro. */
   .text-gold {
-    background-image: linear-gradient(180deg, #f5dd96 0%, #dcae45 50%, #b98a26 100%);
+    background-image: linear-gradient(180deg, #fde9a6 0%, #eec04f 50%, #d09c2c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .bg-gold {
+    background-image: linear-gradient(180deg, #fbe39a 0%, #eec04f 45%, #d09c2c 100%);
   }
 
   /* Misma fórmula, más oscura para mantener contraste sobre fondos claros (blanco) */
   .text-gold-dark {
-    background-image: linear-gradient(180deg, #b98a26 0%, #97701d 50%, #77571a 100%);
+    background-image: linear-gradient(180deg, #c9962d 0%, #a2791f 50%, #7d5b19 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Mismo dorado pero en color plano (no se puede usar el degradé de texto
-     en íconos SVG con currentColor), para que combinen con .text-gold */
+  /* Mismo dorado en color plano (los íconos SVG no admiten el degradé de texto) */
   .icon-gold {
-    color: #dcae45;
+    color: #eec04f;
   }
   .icon-gold-dark {
-    color: #97701d;
+    color: #a2791f;
   }
 }

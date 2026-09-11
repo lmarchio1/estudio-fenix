@@ -19,7 +19,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 78% 18%, rgba(212,164,55,0.16) 0%, rgba(6,18,28,0) 45%)',
+            'radial-gradient(circle at 78% 18%, rgba(238,192,79,0.16) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
       {/* en mobile el texto ocupa todo el ancho: oscurecer parejo para que se lea */}
@@ -50,7 +50,7 @@ export default function Hero() {
           >
             <a
               href="#contacto"
-              className="rounded-full bg-ember-400 px-5 py-3 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:bg-ember-300 hover:shadow-md hover:shadow-ember-900/40"
+              className="rounded-full bg-gold px-5 py-3 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:brightness-110 hover:shadow-md hover:shadow-ember-900/40"
             >
               Solicitar una consulta
             </a>

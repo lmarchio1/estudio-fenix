@@ -3,14 +3,15 @@ import SectionHeading from './ui/SectionHeading'
 import RevealImage from './ui/RevealImage'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import confianzaManos from '../assets/confianza-manos.jpg'
-import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_PATH, WHATSAPP_URL } from '../data/contacto'
+import { WhatsAppIcon } from './ui/BrandIcons'
+import { EMAIL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
 
 // Endpoint tipo Formspree (JSON). Se configura como secret en GitHub Actions.
 // Sin endpoint, el formulario abre el mail del visitante con la consulta redactada.
 const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT
 
-const TEMAS = ['Monotributo', 'Impuestos', 'Certificación contable', 'Balances', 'Sociedades', 'Otra consulta']
-const INITIAL_FORM = { nombre: '', email: '', telefono: '', tema: TEMAS[0], mensaje: '' }
+const ASUNTO = 'Consulta desde la web'
+const INITIAL_FORM = { nombre: '', email: '', telefono: '', mensaje: '' }
 
 const ICON_PROPS = {
   xmlns: 'http://www.w3.org/2000/svg',
@@ -22,17 +23,6 @@ const ICON_PROPS = {
 }
 
 const CANALES = [
-  {
-    label: 'WhatsApp',
-    value: 'Escribinos',
-    href: WHATSAPP_URL,
-    external: true,
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d={WHATSAPP_PATH} />
-      </svg>
-    ),
-  },
   {
     label: 'Email',
     value: EMAIL,
@@ -61,26 +51,39 @@ const FIELD =
 const LABEL = 'mb-1.5 block text-xs font-medium text-slate-300'
 
 function Canal({ canal }) {
-  const Tag = canal.href ? 'a' : 'div'
-  const linkProps = canal.href
-    ? { href: canal.href, ...(canal.external ? { target: '_blank', rel: 'noreferrer' } : {}) }
-    : {}
-
   return (
-    <Tag
-      {...linkProps}
-      className={`group flex items-center gap-4 rounded-2xl bg-white/5 p-4 ring-1 ring-inset ring-white/10 backdrop-blur transition-all duration-300 ${
-        canal.href ? 'hover:-translate-y-0.5 hover:bg-white/10 hover:ring-ember-300/40' : ''
-      }`}
+    <a
+      href={canal.href}
+      className="group flex items-center gap-3 rounded-2xl bg-white/5 p-3.5 ring-1 ring-inset ring-white/10 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:ring-ember-300/40"
     >
-      <span className="icon-gold flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ember-400/15 transition-transform duration-300 group-hover:scale-110">
+      <span className="icon-gold flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ember-400/15 transition-transform duration-300 group-hover:scale-110">
         {canal.icon}
       </span>
       <span className="min-w-0">
         <span className="text-gold block text-xs font-semibold uppercase tracking-wider">{canal.label}</span>
         <span className="mt-0.5 block break-words text-sm text-slate-200">{canal.value}</span>
       </span>
-    </Tag>
+    </a>
+  )
+}
+
+function WhatsAppDestacado() {
+  return (
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="group flex items-center gap-4 rounded-2xl bg-[#25D366]/10 p-5 ring-1 ring-inset ring-[#25D366]/40 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366]/15 hover:ring-[#25D366]/70"
+    >
+      <WhatsAppIcon className="h-12 w-12 transition-transform duration-300 group-hover:scale-110" />
+      <span className="min-w-0 flex-1">
+        <span className="block text-base font-semibold text-white">Escribinos por WhatsApp</span>
+        <span className="mt-0.5 block text-sm text-slate-300">La vía más rápida para tu consulta</span>
+      </span>
+      <svg viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 shrink-0 text-[#25D366] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+        <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+      </svg>
+    </a>
   )
 }
 
@@ -97,11 +100,10 @@ export default function Contacto() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const asunto = `Consulta web: ${form.tema}`
 
     if (!CONTACT_ENDPOINT) {
-      const cuerpo = `Nombre: ${form.nombre}\nEmail: ${form.email}\nTeléfono: ${form.telefono || '-'}\nTema: ${form.tema}\n\n${form.mensaje}`
-      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`
+      const cuerpo = `Nombre: ${form.nombre}\nEmail: ${form.email}\nTeléfono: ${form.telefono || '-'}\n\n${form.mensaje}`
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(ASUNTO)}&body=${encodeURIComponent(cuerpo)}`
       return
     }
 
@@ -110,7 +112,7 @@ export default function Contacto() {
       const res = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...form, _subject: asunto }),
+        body: JSON.stringify({ ...form, _subject: ASUNTO }),
       })
       if (!res.ok) throw new Error('No se pudo enviar el formulario')
       setStatus('sent')
@@ -143,7 +145,7 @@ export default function Contacto() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 85% 15%, rgba(212,164,55,0.15) 0%, rgba(6,18,28,0) 45%)',
+            'radial-gradient(circle at 85% 15%, rgba(238,192,79,0.15) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
 
@@ -157,19 +159,24 @@ export default function Contacto() {
         />
 
         <div ref={gridRef} className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <div className="grid gap-3 sm:grid-cols-3 lg:order-2 lg:col-span-2 lg:grid-cols-1 lg:content-start">
-            {CANALES.map((canal, i) => (
-              <div key={canal.label} className={reveal} style={{ animationDelay: `${150 + i * 90}ms` }}>
-                <Canal canal={canal} />
-              </div>
-            ))}
+          <div className="flex flex-col gap-3 lg:order-2 lg:col-span-2">
+            <div className={reveal} style={{ animationDelay: '150ms' }}>
+              <WhatsAppDestacado />
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              {CANALES.map((canal, i) => (
+                <div key={canal.label} className={reveal} style={{ animationDelay: `${240 + i * 90}ms` }}>
+                  <Canal canal={canal} />
+                </div>
+              ))}
+            </div>
           </div>
 
           <form
             onSubmit={handleSubmit}
             className={`grid grid-cols-1 gap-4 rounded-2xl bg-white/5 p-6 ring-1 ring-inset ring-white/10 backdrop-blur sm:grid-cols-2 sm:p-8 lg:order-1 lg:col-span-3 ${reveal}`}
           >
-            <div>
+            <div className="sm:col-span-2">
               <label htmlFor="nombre" className={LABEL}>Nombre y apellido</label>
               <input id="nombre" name="nombre" type="text" autoComplete="name" required value={form.nombre} onChange={handleChange} className={FIELD} />
             </div>
@@ -181,14 +188,6 @@ export default function Contacto() {
               <label htmlFor="telefono" className={LABEL}>Teléfono (opcional)</label>
               <input id="telefono" name="telefono" type="tel" autoComplete="tel" value={form.telefono} onChange={handleChange} className={FIELD} />
             </div>
-            <div>
-              <label htmlFor="tema" className={LABEL}>Tema de la consulta</label>
-              <select id="tema" name="tema" value={form.tema} onChange={handleChange} className={`${FIELD} bg-fenixNavy-900 focus:bg-fenixNavy-900`}>
-                {TEMAS.map((tema) => (
-                  <option key={tema} value={tema}>{tema}</option>
-                ))}
-              </select>
-            </div>
             <div className="sm:col-span-2">
               <label htmlFor="mensaje" className={LABEL}>Mensaje</label>
               <textarea id="mensaje" name="mensaje" rows={4} required value={form.mensaje} onChange={handleChange} className={FIELD} />
@@ -199,7 +198,7 @@ export default function Contacto() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="shrink-0 rounded-full bg-ember-400 px-6 py-2.5 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ember-300 disabled:translate-y-0 disabled:opacity-60"
+                className="shrink-0 rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 disabled:translate-y-0 disabled:opacity-60"
               >
                 {status === 'sending' ? 'Enviando…' : 'Enviar consulta'}
               </button>

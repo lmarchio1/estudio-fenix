@@ -1,17 +1,10 @@
 import Logo from './ui/Logo'
-import {
-  EMAIL,
-  LINKEDIN_PATH,
-  LINKEDIN_URL,
-  TELEFONO,
-  TELEFONO_URL,
-  WHATSAPP_PATH,
-  WHATSAPP_URL,
-} from '../data/contacto'
+import { LinkedInIcon, WhatsAppIcon } from './ui/BrandIcons'
+import { EMAIL, LINKEDIN_URL, TELEFONO, TELEFONO_URL, WHATSAPP_URL } from '../data/contacto'
 
 const REDES = [
-  { label: 'WhatsApp', href: WHATSAPP_URL, path: WHATSAPP_PATH, hover: 'hover:bg-[#25D366]' },
-  { label: 'LinkedIn', href: LINKEDIN_URL, path: LINKEDIN_PATH, hover: 'hover:bg-[#0A66C2]' },
+  { label: 'WhatsApp', href: WHATSAPP_URL, Icon: WhatsAppIcon },
+  { label: 'LinkedIn', href: LINKEDIN_URL, Icon: LinkedInIcon },
 ]
 
 const YEAR = new Date().getFullYear()
@@ -31,7 +24,7 @@ export default function Footer() {
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(circle at 8% 0%, rgba(212,164,55,0.1) 0%, rgba(6,18,28,0) 45%)',
+          background: 'radial-gradient(circle at 8% 0%, rgba(238,192,79,0.1) 0%, rgba(6,18,28,0) 45%)',
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -78,19 +71,17 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-5 flex gap-3">
-              {REDES.map((red) => (
+              {REDES.map(({ label, href, Icon }) => (
                 <a
-                  key={red.label}
-                  href={red.href}
+                  key={label}
+                  href={href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={red.label}
-                  title={red.label}
-                  className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-slate-300 ring-1 ring-inset ring-white/15 transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:ring-transparent ${red.hover}`}
+                  aria-label={label}
+                  title={label}
+                  className="rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]" aria-hidden="true">
-                    <path d={red.path} />
-                  </svg>
+                  <Icon className="h-10 w-10" />
                 </a>
               ))}
             </div>

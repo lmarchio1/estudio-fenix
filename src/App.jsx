@@ -6,6 +6,7 @@ import Nosotros from './components/Nosotros'
 import Areas from './components/Areas'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
+import WhatsAppFlotante from './components/WhatsAppFlotante'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Contacto />
       </main>
       <Footer />
+      <WhatsAppFlotante />
     </div>
   )
 }

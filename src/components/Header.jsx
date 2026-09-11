@@ -56,7 +56,7 @@ export default function Header() {
               href={link.href}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 activeHref === link.href
-                  ? 'bg-ember-400 text-fenixNavy-950 shadow-sm shadow-ember-900/30'
+                  ? 'bg-gold text-fenixNavy-950 shadow-sm shadow-ember-900/30'
                   : 'text-slate-200 hover:bg-white/10 hover:text-white'
               }`}
             >
@@ -67,7 +67,7 @@ export default function Header() {
 
         <a
           href="#contacto"
-          className="hidden rounded-full bg-ember-400 px-5 py-2.5 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:bg-ember-300 hover:shadow-md hover:shadow-ember-900/40 lg:inline-block"
+          className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-fenixNavy-950 shadow-sm shadow-ember-900/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:brightness-110 hover:shadow-md hover:shadow-ember-900/40 lg:inline-block"
         >
           Consultanos
         </a>
@@ -105,7 +105,7 @@ export default function Header() {
             <a
               href="#contacto"
               onClick={() => setIsOpen(false)}
-              className="rounded-full bg-ember-400 px-4 py-2 text-center text-sm font-semibold text-fenixNavy-950"
+              className="rounded-full bg-gold px-4 py-2 text-center text-sm font-semibold text-fenixNavy-950"
             >
               Consultanos
             </a>
