@@ -11,12 +11,18 @@ export default function Card({ icon, title, description, delay = 0 }) {
       }`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="icon-gold inline-flex h-11 w-11 items-center justify-center rounded-xl bg-fenixNavy-900 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pop">
-        {icon}
+      {/* celular/tablet: ícono al lado del título para que las tarjetas sean más bajas;
+          desktop: ícono arriba */}
+      <div className="flex items-center gap-3.5 lg:block">
+        <div className="icon-gold inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-fenixNavy-900 transition-transform duration-300 group-hover:scale-110 group-hover:animate-pop">
+          {icon}
+        </div>
+        <div>
+          <h3 className="font-serif text-base font-bold text-fenixNavy-900 lg:mt-4">{title}</h3>
+          <span className="mt-1.5 block h-0.5 w-6 rounded-full bg-ember-400 transition-all duration-300 group-hover:w-12" />
+        </div>
       </div>
-      <h3 className="mt-4 font-serif text-base font-bold text-fenixNavy-900">{title}</h3>
-      <span className="mt-1.5 block h-0.5 w-6 rounded-full bg-ember-400 transition-all duration-300 group-hover:w-12" />
-      <p className="mt-2.5 text-sm leading-relaxed text-slate-600">{description}</p>
+      <p className="mt-3 text-sm leading-relaxed text-slate-600 lg:mt-2.5">{description}</p>
     </div>
   )
 }

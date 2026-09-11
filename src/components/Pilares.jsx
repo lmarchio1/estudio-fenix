@@ -49,19 +49,22 @@ const PILARES = [
 export default function Pilares() {
   return (
     <div className="relative z-10 -mt-16 px-4 sm:px-6 lg:px-8">
-      <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl bg-slate-200 shadow-xl shadow-fenixNavy-950/10 ring-1 ring-slate-200 lg:grid-cols-4">
+      {/* celular: una fila por pilar con el ícono a la izquierda; desde sm, grilla */}
+      <ul className="mx-auto grid max-w-6xl grid-cols-1 gap-px overflow-hidden rounded-2xl bg-slate-200 shadow-xl shadow-fenixNavy-950/10 ring-1 ring-slate-200 sm:grid-cols-2 lg:grid-cols-4">
         {PILARES.map((pilar, i) => (
           <li
             key={pilar.title}
-            className="group relative animate-fade-up bg-white p-5 transition-colors duration-300 hover:bg-ember-50/60 sm:p-6"
+            className="group relative flex animate-fade-up items-center gap-4 bg-white px-5 py-4 transition-colors duration-300 hover:bg-ember-50/60 sm:block sm:p-6"
             style={{ animationDelay: `${600 + i * 100}ms` }}
           >
             <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-ember-400 transition-transform duration-300 group-hover:scale-x-100" />
-            <span className="icon-gold-dark inline-flex h-10 w-10 items-center justify-center rounded-full bg-ember-50 ring-1 ring-inset ring-ember-200 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110">
+            <span className="icon-gold-dark inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ember-50 ring-1 ring-inset ring-ember-200 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110">
               {pilar.icon}
             </span>
-            <p className="mt-3 text-sm font-semibold leading-snug text-fenixNavy-900">{pilar.title}</p>
-            <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">{pilar.description}</p>
+            <div>
+              <p className="text-sm font-semibold leading-snug text-fenixNavy-900 sm:mt-3">{pilar.title}</p>
+              <p className="mt-0.5 text-sm leading-relaxed text-slate-600 sm:mt-1">{pilar.description}</p>
+            </div>
           </li>
         ))}
       </ul>
