@@ -1,10 +1,11 @@
 import Logo from './ui/Logo'
-import { LinkedInIcon, WhatsAppIcon } from './ui/BrandIcons'
+import { EmailIcon, LinkedInIcon, WhatsAppIcon } from './ui/BrandIcons'
 import { EMAIL, LINKEDIN_URL, WHATSAPP_URL } from '../data/contacto'
 
 const REDES = [
-  { label: 'WhatsApp', href: WHATSAPP_URL, Icon: WhatsAppIcon },
-  { label: 'LinkedIn', href: LINKEDIN_URL, Icon: LinkedInIcon },
+  { label: 'WhatsApp', href: WHATSAPP_URL, Icon: WhatsAppIcon, externo: true },
+  { label: 'LinkedIn', href: LINKEDIN_URL, Icon: LinkedInIcon, externo: true },
+  { label: 'Email', href: `mailto:${EMAIL}`, Icon: EmailIcon, title: EMAIL },
 ]
 
 const YEAR = new Date().getFullYear()
@@ -55,30 +56,19 @@ export default function Footer() {
           <div>
             <h3 className="text-gold text-xs font-semibold uppercase tracking-wider">Contacto</h3>
             <ul className="mt-4 space-y-3">
-              {REDES.map(({ label, href, Icon }) => (
+              {REDES.map(({ label, href, Icon, externo, title }) => (
                 <li key={label}>
                   <a
                     href={href}
-                    target="_blank"
-                    rel="noreferrer"
+                    title={title}
+                    {...(externo && { target: '_blank', rel: 'noreferrer' })}
                     className={`group inline-flex items-center gap-2.5 ${LINK_CLASS}`}
                   >
-                    <Icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+                    <Icon className="h-6 w-6 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-black/40" />
                     {label}
                   </a>
                 </li>
               ))}
-              <li>
-                <a href={`mailto:${EMAIL}`} title={EMAIL} className={`group inline-flex items-center gap-2.5 ${LINK_CLASS}`}>
-                  <span className="icon-gold flex h-6 w-6 items-center justify-center rounded-full bg-ember-400/15 transition-transform duration-300 group-hover:scale-110">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-3.5 w-3.5" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0119.5 19.5h-15a2.25 2.25 0 01-2.25-2.25V6.75z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75l8.25 6.5 8.25-6.5" />
-                    </svg>
-                  </span>
-                  Email
-                </a>
-              </li>
             </ul>
           </div>
         </div>
