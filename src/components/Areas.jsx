@@ -1,7 +1,7 @@
 import SectionHeading from './ui/SectionHeading'
 import RevealImage from './ui/RevealImage'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import contadorGeneral from '../assets/contador-general.jpg'
+import { FOTO_CONTADOR } from '../data/fotos'
 
 const CLIENTES = [
   'Monotributistas',
@@ -24,7 +24,8 @@ export default function Areas() {
           más un filete dorado vertical en el borde */}
       <div className="group/foto absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden xl:block">
         <RevealImage
-          src={contadorGeneral}
+          {...FOTO_CONTADOR}
+          sizes="50vw"
           alt="Contadores revisando informes y balances"
           className="h-full w-full object-cover object-center group-hover/foto:scale-105"
         />
@@ -42,7 +43,8 @@ export default function Areas() {
           funde en el fondo de la sección (acá blanco) y el título se apoya encima */}
       <div className="relative h-60 overflow-hidden sm:h-80 xl:hidden">
         <RevealImage
-          src={contadorGeneral}
+          {...FOTO_CONTADOR}
+          sizes="100vw"
           alt="Contadores revisando informes y balances"
           className="h-full w-full object-cover object-[55%_center]"
         />

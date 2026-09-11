@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SectionHeading from './ui/SectionHeading'
 import RevealImage from './ui/RevealImage'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import confianzaManos from '../assets/confianza-manos.jpg'
+import { FOTO_MANOS } from '../data/fotos'
 import { WhatsAppIcon } from './ui/BrandIcons'
 import { EMAIL, WHATSAPP_URL } from '../data/contacto'
 
@@ -114,7 +114,7 @@ export default function Contacto() {
   return (
     <section id="contacto" className="relative scroll-mt-24 overflow-hidden bg-fenixNavy-950 py-20 sm:py-28 lg:py-16">
       <div className="absolute inset-x-0 top-0 h-80 w-full overflow-hidden sm:inset-0 sm:h-full">
-        <RevealImage src={confianzaManos} className="h-full w-full object-cover" />
+        <RevealImage {...FOTO_MANOS} sizes="100vw" className="h-full w-full object-cover" />
         <div
           className="absolute inset-0 sm:hidden"
           style={{

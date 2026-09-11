@@ -1,7 +1,7 @@
 import SectionHeading from './ui/SectionHeading'
 import RevealImage from './ui/RevealImage'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import compuCafe from '../assets/compu-cafe.jpg'
+import { FOTO_COMPU_CAFE } from '../data/fotos'
 
 const SOCIOS = [
   {
@@ -55,7 +55,7 @@ export default function Nosotros() {
 
       {/* foto a pantalla completa del lado izquierdo, solo desktop */}
       <div className="group/foto absolute inset-y-0 left-0 hidden w-1/2 overflow-hidden xl:block">
-        <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover group-hover/foto:scale-105" />
+        <RevealImage {...FOTO_COMPU_CAFE} sizes="50vw" alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover group-hover/foto:scale-105" />
         <div
           className="absolute inset-0"
           style={{
@@ -67,7 +67,7 @@ export default function Nosotros() {
 
       {/* mobile/tablet: franja de foto a todo el ancho que se funde en el fondo */}
       <div className="relative h-60 overflow-hidden sm:h-80 xl:hidden">
-        <RevealImage src={compuCafe} alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover" />
+        <RevealImage {...FOTO_COMPU_CAFE} sizes="100vw" alt="Estudio Fénix — espacio de trabajo" className="h-full w-full object-cover" />
         <div
           className="absolute inset-0"
           style={{

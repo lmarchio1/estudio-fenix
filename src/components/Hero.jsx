@@ -1,10 +1,12 @@
-import estudioOficina from '../assets/estudio-oficina.jpg'
+import { FOTO_OFICINA } from '../data/fotos'
 
 export default function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-fenixNavy-950">
       <img
-        src={estudioOficina}
+        {...FOTO_OFICINA}
+        sizes="100vw"
+        fetchpriority="high"
         alt=""
         className="absolute inset-0 h-full w-full animate-settle object-cover"
       />

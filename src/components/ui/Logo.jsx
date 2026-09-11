@@ -4,7 +4,7 @@ export default function Logo({
   variant = 'light',
   iconClassName = 'h-9 w-9',
   nameClassName = 'text-lg',
-  taglineClassName = 'text-[9px]',
+  taglineClassName = 'text-[10px]',
   gap = 'gap-2.5',
   stacked = false,
 }) {
