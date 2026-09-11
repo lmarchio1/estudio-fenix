@@ -80,8 +80,8 @@ export default function Servicios() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Servicios"
-          title="Asesoramiento contable, impositivo y societario"
-          description="Para personas humanas y jurídicas: monotributistas, responsables inscriptos, profesionales independientes y sociedades."
+          title="Cómo podemos ayudarte"
+          description="Nos ocupamos de tus obligaciones para que puedas enfocarte en tu trabajo."
         />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -40,9 +40,7 @@ export default function Hero() {
             className="mt-6 animate-fade-up text-lg leading-relaxed text-slate-200 motion-reduce:animate-none"
             style={{ animationDelay: '240ms' }}
           >
-            Monotributo, declaraciones juradas, certificaciones contables y balances.
-            Atención personalizada de contadores públicos para monotributistas,
-            responsables inscriptos y sociedades.
+            Respuestas claras y un servicio a medida para que tu actividad esté siempre en regla.
           </p>
           <div
             className="mt-8 flex animate-fade-up flex-wrap gap-4 motion-reduce:animate-none"

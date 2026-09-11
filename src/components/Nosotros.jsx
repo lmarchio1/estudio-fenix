@@ -8,13 +8,13 @@ const SOCIOS = [
     initials: 'N',
     nombre: 'Nacho Ramírez',
     rol: 'Contador Público · Socio',
-    bio: 'Especialista en monotributo, impuestos nacionales y provinciales, y planificación fiscal para profesionales independientes.',
+    bio: 'Especialista en impuestos nacionales y provinciales y en planificación fiscal.',
   },
   {
     initials: 'L',
     nombre: 'Leandro Marchioni',
     rol: 'Contador Público · Socio',
-    bio: 'Especialista en certificaciones contables, estados contables y sociedades comerciales.',
+    bio: 'Especialista en estados contables y sociedades comerciales.',
   },
 ]
 
@@ -83,7 +83,7 @@ export default function Nosotros() {
             variant="dark"
             eyebrow="Quiénes somos"
             title="Nuestra historia"
-            description="Somos un estudio de contadores públicos dedicado al asesoramiento contable, impositivo y societario de profesionales, comercios y empresas."
+            description="Somos un estudio de contadores públicos que brinda asesoramiento integral a personas y empresas."
           >
             <p className="mt-3 text-base text-slate-300">
               Nuestro objetivo es brindar un servicio de excelencia, basado en el conocimiento
