@@ -85,12 +85,13 @@ export default function Nosotros() {
             eyebrow="Quiénes somos"
             spacing="mb-10 xl:mb-8"
             title="Nuestro estudio"
-            description="Nos conocimos cursando un posgrado y, con la misma idea de emprender, decidimos fundar Estudio Fénix."
+            description="Detrás de Estudio Fénix hay una historia de amistad que empezó estudiando y se consolidó en la decisión de dar un salto: emprender nuestro propio camino."
           >
             <p className="mt-3 text-base text-slate-300 xl:text-[15px]">
-              Nuestro objetivo es brindar un servicio de excelencia, basado en el conocimiento
-              técnico, la actualización permanente en materia tributaria y el compromiso con cada
-              cliente, para facilitar la toma de decisiones y el cumplimiento de sus obligaciones.
+              Por eso entendemos de primera mano lo que significa construir un proyecto desde cero,
+              con la ilusión, los desafíos y las dudas que eso implica. Nuestra propuesta no es solo
+              resolver tus obligaciones contables o tributarias, sino ser ese equipo de confianza que
+              te escucha, te ayuda y celebra tus avances.
             </p>
           </SectionHeading>
 
