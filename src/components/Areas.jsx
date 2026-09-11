@@ -38,8 +38,8 @@ export default function Areas() {
         <span className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-ember-600 via-ember-300 to-ember-600" />
       </div>
 
-      {/* mobile/tablet: franja de foto que se oscurece hacia abajo con el azul del
-          estudio y cierra con un filete dorado */}
+      {/* mobile/tablet: igual que en Nosotros, franja de foto a todo el ancho que se
+          funde en el fondo de la sección (acá blanco) y el título se apoya encima */}
       <div className="relative h-60 overflow-hidden sm:h-80 xl:hidden">
         <RevealImage
           src={contadorGeneral}
@@ -49,14 +49,13 @@ export default function Areas() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, rgba(6,18,28,0.1) 0%, rgba(6,18,28,0.15) 45%, rgba(6,18,28,0.7) 100%)',
+            background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 55%, rgba(255,255,255,1) 100%)',
           }}
         />
-        <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-ember-600 via-ember-300 to-ember-600" />
       </div>
 
       {/* el contenedor deja pasar el mouse para que la foto de atrás reciba el hover */}
-      <div className="relative mx-auto max-w-7xl px-4 pt-12 sm:px-6 sm:pt-16 lg:px-8 xl:pointer-events-none xl:pt-0">
+      <div className="relative mx-auto -mt-10 max-w-7xl px-4 sm:-mt-14 sm:px-6 lg:px-8 xl:pointer-events-none xl:mt-0">
         {/* misma altura mínima que Nosotros para que ambas secciones midan igual en desktop */}
         <div className="xl:pointer-events-auto xl:flex xl:min-h-[var(--split-min-h)] xl:max-w-[35rem] xl:flex-col xl:justify-center">
           <SectionHeading
