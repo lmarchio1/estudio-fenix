@@ -92,9 +92,9 @@ export default function Nosotros() {
             </p>
             <p className="mt-3 text-base text-slate-300">
               Comprendemos los desafíos de consolidar un proyecto económico. Por eso, nuestra
-              propuesta trasciende el cumplimiento contable y fiscal: nos posicionamos como su socio
-              estratégico para brindar asesoramiento integral y potenciar el crecimiento de su
-              organización.
+              propuesta trasciende el cumplimiento contable y fiscal: nos posicionamos como tu socio
+              estratégico para brindar asesoramiento integral y potenciar el crecimiento de tu
+              actividad.
             </p>
           </SectionHeading>
 
