@@ -87,13 +87,14 @@ export default function Nosotros() {
             title="Nuestro estudio"
           >
             <p className="mt-3 text-base text-slate-200 drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
-              Detrás de Estudio Fénix hay una amistad que nació estudiando y se consolidó en la
-              decisión de emprender nuestro propio camino.
+              Estudio Fénix surge de una sólida alianza profesional consolidada en la formación
+              académica y en una visión compartida.
             </p>
             <p className="mt-3 text-base text-slate-300">
-              Por eso sabemos lo que implica construir un proyecto desde cero. Nuestra propuesta no
-              es solo resolver tus obligaciones contables y tributarias, sino ser un equipo de
-              confianza que te escucha, te acompaña y celebra tus avances.
+              Comprendemos los desafíos de consolidar un proyecto económico. Por eso, nuestra
+              propuesta trasciende el cumplimiento contable y fiscal: nos posicionamos como su socio
+              estratégico para brindar asesoramiento integral y potenciar el crecimiento de su
+              organización.
             </p>
           </SectionHeading>
 
