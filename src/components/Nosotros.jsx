@@ -8,13 +8,17 @@ const SOCIOS = [
     initials: 'N',
     nombre: 'Nacho Ramírez',
     rol: 'Contador Público · Socio',
-    bio: 'Especialista en impuestos nacionales y provinciales y en planificación fiscal.',
+    universidad: 'Universidad Nacional de San Martín',
+    // TODO: completar con la matrícula real (consejo, tomo y folio).
+    matricula: '',
   },
   {
     initials: 'L',
     nombre: 'Leandro Marchioni',
     rol: 'Contador Público · Socio',
-    bio: 'Especialista en estados contables y sociedades comerciales.',
+    universidad: 'Universidad Nacional de La Matanza',
+    // TODO: completar con la matrícula real (consejo, tomo y folio).
+    matricula: '',
   },
 ]
 
@@ -37,7 +41,26 @@ function SocioCard({ socio, delay }) {
           <p className="text-gold text-sm">{socio.rol}</p>
         </div>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-slate-300 xl:mt-3">{socio.bio}</p>
+      {/* datos reales del socio: universidad y matrícula (la matrícula se muestra
+          solo cuando está cargada) */}
+      <div className="mt-4 space-y-1.5 border-t border-white/10 pt-3 xl:mt-3">
+        <p className="flex items-start gap-2 text-sm text-slate-300">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="icon-gold mt-0.5 h-4 w-4 shrink-0" aria-hidden="true">
+            <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.95 49.95 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.88 50.88 0 007.5 12.173v-.224c0-.131.067-.248.172-.311a54.6 54.6 0 014.653-2.52.75.75 0 00-.65-1.352 56.12 56.12 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.8 49.8 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.65 60.65 0 0111.7 2.805z" />
+            <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.87 47.87 0 00-8.105 4.342.75.75 0 01-.832 0 47.87 47.87 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11a.75.75 0 001.34.67c.317-.634.503-1.25.588-1.778a1.5 1.5 0 00-.437-2.51V12.5c.86.212 1.706.47 2.535.77l.002.001a3 3 0 002.572-.21z" />
+            <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.437 1.347.667-.317.65-.742 1.244-1.286 1.788a.75.75 0 01-1.06-1.06z" />
+          </svg>
+          {socio.universidad}
+        </p>
+        {socio.matricula && (
+          <p className="flex items-start gap-2 text-sm text-slate-400">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="icon-gold mt-0.5 h-4 w-4 shrink-0" aria-hidden="true">
+              <path fillRule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clipRule="evenodd" />
+            </svg>
+            {socio.matricula}
+          </p>
+        )}
+      </div>
     </div>
   )
 }
